@@ -7,7 +7,7 @@ CREATE TABLE countries (
 
 CREATE TABLE codenames (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  alias VARCHAR(50) NOT NULL
+  alias VARCHAR(50) NOT NULL UNIQUE
 ) engine=InnoDB;
 
 CREATE TABLE specialities (
@@ -20,7 +20,7 @@ CREATE TABLE agents (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   birthdate DATE NOT NULL,
-  code_agent INT(11) NOT NULL,
+  code_agent INT(11) NOT NULL UNIQUE,
   nationality INT(11) NOT NULL,
   speciality INT(11) NOT NULL,
   FOREIGN KEY (nationality) REFERENCES countries(id),
@@ -32,7 +32,7 @@ CREATE TABLE targets (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   birthdate DATE NOT NULL,
-  codename INT(11) NOT NULL,
+  codename INT(11) NOT NULL UNIQUE,
   nationality INT(11) NOT NULL,
   FOREIGN KEY (codename) REFERENCES codenames(id),
   FOREIGN KEY (nationality) REFERENCES countries(id)
@@ -43,7 +43,7 @@ CREATE TABLE contacts (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   birthdate DATE NOT NULL,
-  codename INT(11) NOT NULL,
+  codename INT(11) NOT NULL UNIQUE,
   nationality INT(11) NOT NULL,
   FOREIGN KEY (codename) REFERENCES codenames(id),
   FOREIGN KEY (nationality) REFERENCES countries(id)
@@ -66,7 +66,7 @@ CREATE TABLE missions (
   mission_status VARCHAR(50) NOT NULL,
   date_start DATE NOT NULL,
   date_end DATE NOT NULL,
-  codename INt(11) NOT NULL,
+  codename INt(11) NOT NULL UNIQUE,
   country INT(11) NOT NULL,
   agent INT(11) NOT NULL,
   target INT(11) NOT NULL,
@@ -90,3 +90,69 @@ CREATE TABLE administrators (
   password CHAR(60) NOT NULL,
   date_creation DATE NOT NULL
 ) engine=InnoDB;
+
+INSERT INTO countries (location) VALUES 
+  ('Afghanistan'), ('Afrique du Sud'), ('Alabanie'), ('Allemagne'),
+  ('Bangladesh'), ('Belgique'), ('Birmanie'), ('Brésil'),
+  ('Cambodge'), ('Canada'), ('Chili'), ('Chine'), ('Cuba'),
+  ('Danemark'), ('Djibouti'), ('Égypte'), ('Émirats arabes unis'), ('Espagne'), ('États-Unis'),
+  ('Finlande'), ('France'), ('Gabon'), ('Ghana'), ('Grèce'),
+  ('Haïti'), ('Honduras'), ('Hongrie'),
+  ('Inde'), ('Indonésie'), ('Irak'), ('Iran'), ('Irlande'), ('Israel'), ('Italie'),
+  ('Japon'), ('Jordanie'), ('Kazakhstan'), ('Kenya'), ('Koweit'),
+  ('Laos'), ('Lettonie'), ('Liban'), ('Libéria'), ('Libye'), ('Lituanie'), ('Luxembourg'),
+  ('Madagascar'), ('Malaisie'), ('Maldives'), ('Mali'), ('Maroc'), ('Mexique'),
+  ('Nicaragua'), ('Nigeria'), ('Norvège'), ('Nouvelle-Zélande'),
+  ('Oman'), ('Ouganda'), ('Ouzbékistan'),
+  ('Pakistan'), ('Palestine'), ('Panama'), ('Paraguay'), ('Pays-Bas'), ('Pérou'), ('Portugal'),
+  ('Qatar'), ('Roumanie'), ('Royaume-Uni'), ('Russie'), ('Rwanda'),
+  ('Salvador'), ('Sénégal'), ('Serbie'), ('Singapour'), ('Slovaquie'), ('Suède'), ('Suisse'),
+  ('Tadjikistan'), ('Tchad'), ('Thailande'), ('Tunisie'), ('Turquie'),
+  ('Ukraine'), ('Uruguay'), ('Venezuela'), ('Vietnam'), ('Yémen'), ('Zimbabwe')
+
+
+INSERT INTO codenames (alias) VALUES
+  ('Macaca mulatta'), ('Otaria flavescens'), ('Macropus giganteus'), ('Corvus albus'),
+  ('Pavo cristatus'), ('Limnocorax flavirostra'), ('Nyctereutes procyonoides'),
+  ('Connochaetus taurinus'), ('Dusicyon thous'), ('Gyps fulvus'), ('Tadorna tadorna'),
+  ('Francolinus coqui'), ('Ammospermophilus nelsoni'), ('Lutra canadensis'), ('Ardea golieth'),
+  ('Milvus migrans'), ('Sarcorhamphus papa'), ('Globicephala melas'), ('Crotalus cerastes'),
+  ('Sarkidornis melanotos'), ('Sylvicapra grimma'), ('Panthera pardus'),
+  ('Macropus agilis'), ('Gymnorhina tibicen'), ('Equus hemionus'), ('Anas punctata'),
+  ('Aonyx cinerea'), ('Macaca radiata'), ('Platalea leucordia'),
+  ('Elephas maximus bengalensis'), ('Tockus flavirostris'), ('Felis chaus'),
+  ('Varanus salvator'), ('Spermophilus richardsonii'), ('Sciurus vulgaris'),
+  ('Acrantophis madagascariensis'), ('Ninox superciliaris'), ('Meles meles'), ('Kobus leche robertsi'),
+  ('Diomedea irrorata'), ('Phascogale tapoatafa'), ('Ursus americanus'), ('Ara ararauna'),
+  ('Pseudocheirus peregrinus'), ('Oncorhynchus nerka'), ('Castor fiber'), ('Rangifer tarandus'),
+  ('Felis libyca'), ('Recurvirostra avosetta'), ('Larus dominicanus');
+
+INSERT INTO specialities (skill) VALUES
+  ('Désinformation'), ('Élimination'), ('Exfiltration'), ('Explosifs'), ('Filature'),
+  ('Infiltration'), ('Intimidation'), ('Hacking'), ('Nettoyage'), ('Sabotage');
+
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Gilbertina', 'Palfreeman', '1975-09-10', 416, 24, 7);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Thatch', 'Corkish', '1990-05-03', 828, 3, 6);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Brendin', 'Steabler', '1985-03-18', 144, 11, 9);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Ansel', 'Bilbey', '1988-03-06', 500, 20, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Ward', 'Kingdon', '1986-02-10', 659, 14, 5);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Bridgette', 'Draisey', '1972-07-27', 755, 5, 10);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Ilyse', 'Krimmer', '1995-03-02', 455, 27, 4);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Jehu', 'Danneil', '1984-02-16', 405, 11, 7);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Shep', 'Jaqueme', '1977-03-05', 940, 15, 5);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Raul', 'Greensall', '1970-07-24', 724, 19, 9);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Curry', 'Icke', '1979-07-09', 793, 30, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Vern', 'Mullane', '1970-03-22', 478, 27, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Ashleigh', 'Brandrick', '1982-03-31', 584, 8, 2);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Bonnee', 'Sibbet', '1977-01-24', 537, 22, 6);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Agnella', 'Bails', '1981-11-22', 840, 25, 6);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Tiffi', 'Gouldeby', '1984-07-13', 542, 19, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Natalie', 'Poe', '1978-10-30', 550, 30, 2);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Woodie', 'Goodliffe', '1989-08-15', 991, 3, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Rodrick', 'Popeley', '1973-12-23', 561, 9, 1);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Vinita', 'Dobrowski', '1989-02-18', 616, 18, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Julieta', 'Shovelton', '1989-02-19', 221, 21, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Cora', 'Pringour', '1994-11-03', 549, 13, 5);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Raimondo', 'Rohlfs', '1975-11-19', 763, 25, 3);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Cleavland', 'Wiper', '1982-07-07', 204, 12, 9);
+INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality, speciality) VALUES ('Chadwick', 'Geeraert', '1971-01-09', 944, 9, 8);
