@@ -325,11 +325,11 @@ INSERT INTO hideouts (code_hideout, adress, type, country)
 VALUES (94, '15 Quincy Center', Cave, 41);
 
 INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, specialty)
-VALUES (null, null, 8, 1, '2021-08-06', '2022-02-16', 15, 2, 7, 21, 13, 14, 5, 6, 10, 14, 12, 26, 14, 8);
+VALUES ('chaton du desert','blablaloremipsum', 'nouvelle clef étrangère?', 'en cours', '2021-08-06', '2022-02-16', 15, 2, 7, 21, 13, 14, 5, 6, 10, 14, 12, 26, 14, 8);
 INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, specialty)
-VALUES (null, null, 10, 1, '2021-06-19', '2021-08-30', 27, 7, 3, 10, 2, 14, 14, 12, 18, 15, 30, 30, 20, 6);
+VALUES ('titre2', 'description2', 'type2', 'en cours', '2021-06-19', '2021-08-30', 27, 7, 3, 10, 2, 14, 14, 12, 18, 15, 30, 30, 20, 6);
 INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, specialty)
-VALUES (null, null, 2, 3, '2021-03-13', '2022-02-08', 24, 2, 9, 25, 12, 5, 5, 6, 17, 17, 26, 20, 11, 1);
+VALUES ('titre3', 'description3', 'type3', 'en cours', '2021-03-13', '2022-02-08', 24, 2, 9, 25, 12, 5, 5, 6, 17, 17, 26, 20, 11, 1);
 
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
 VALUES ('Iggie', 'Glave', 'iglave0@hao123.com', '1NNj5XuYS', '2020-06-23');
