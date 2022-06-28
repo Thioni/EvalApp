@@ -264,80 +264,81 @@ INSERT INTO contacts (first_name, last_name, birthdate, codename, nationality)
 VALUES ('Harrie', 'Dionis', '1988-11-03', 6, 32);
 
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (8, '2575 Washington Center', Appartement, 23);
+VALUES (8, '2575 Washington Center', 'Appartement', 23);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (49, '4006 Kinsman Terrace', Villa, 83);
+VALUES (49, '4006 Kinsman Terrace', 'Villa', 83);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (56, '3610 Vahlen Point', Bunker, 72);
+VALUES (56, '3610 Vahlen Point', 'Bunker', 72);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (99, '2794 Monument Crossing', Maison, 58);
+VALUES (99, '2794 Monument Crossing', 'Maison', 58);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (62, '765 Oriole Center', Appartement, 80);
+VALUES (62, '765 Oriole Center', 'Appartement', 80);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (66, '18233 Buhler Junction', Entrepot, 66);
+VALUES (66, '18233 Buhler Junction', 'Entrepot', 66);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (70, '697 Union Pass', Maison, 45);
+VALUES (70, '697 Union Pass', 'Maison', 45);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (71, '60 Pine View Parkway', Garage, 61);
+VALUES (71, '60 Pine View Parkway', 'Garage', 61);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (66, '2561 Stone Corner Street', Cave, 25);
+VALUES (66, '2561 Stone Corner Street', 'Cave', 25);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (77, '432 Armistice Street', Bunker, 72);
+VALUES (77, '432 Armistice Street', 'Bunker', 72);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (45, '4 Crest Line Circle', Entrepot, 4);
+VALUES (45, '4 Crest Line Circle', 'Entrepot', 4);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (25, '127 Towne Place', Cave, 64);
+VALUES (25, '127 Towne Place', 'Cave', 64);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (95, '5841 Superior Lane', Chalet, 20);
+VALUES (95, '5841 Superior Lane', 'Chalet', 20);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (10, '0157 Sugar Terrace', Villa, 54);
+VALUES (10, '0157 Sugar Terrace', 'Villa', 54);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (16, '16 Meadow Valley Center', Armurerie, 75);
+VALUES (16, '16 Meadow Valley Center', 'Armurerie', 75);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (89, '07531 Buell Parkway', Entrepot, 40);
+VALUES (89, '07531 Buell Parkway', 'Entrepot', 40);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (91, '2379 Marquette Court', Armurerie, 89);
+VALUES (91, '2379 Marquette Court', 'Armurerie', 89);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (99, '0138 Hazelcrest Lane', Chalet, 46);
+VALUES (99, '0138 Hazelcrest Lane', 'Chalet', 46);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (37, '1 Fuller Center', Villa, 41);
+VALUES (37, '1 Fuller Center', 'Villa', 41);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (86, '8 Briar Crest Junction', Cave, 60);
+VALUES (86, '8 Briar Crest Junction', 'Cave', 60);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (77, '226 Schurz Road', Garage, 26);
+VALUES (77, '226 Schurz Road', 'Garage', 26);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (5, '067 Maryland Pass', Entrepot, 67);
+VALUES (5, '067 Maryland Pass', 'Entrepot', 67);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (60, '85791 Johnson Place', Maison, 32);
+VALUES (60, '85791 Johnson Place', 'Maison', 32);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (1, '45114 Crownhardt Place', Garage, 30);
+VALUES (1, '45114 Crownhardt Place', 'Garage', 30);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (100, '44 Maple Plaza', Villa, 1);
+VALUES (100, '44 Maple Plaza', 'Villa', 1);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (16, '4 Menomonie Parkway', Maison, 11);
+VALUES (16, '4 Menomonie Parkway', 'Maison', 11);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (30, '0 Elmside Drive', Armurerie, 4);
+VALUES (30, '0 Elmside Drive', 'Armurerie', 4);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (74, '5881 Eliot Trail', Magasin, 17);
+VALUES (74, '5881 Eliot Trail', 'Magasin', 17);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (3, '3519 Burning Wood Street', Cave, 17);
+VALUES (3, '3519 Burning Wood Street', 'Cave', 17);
 INSERT INTO hideouts (code_hideout, adress, type, country) 
-VALUES (94, '15 Quincy Center', Cave, 41);
+VALUES (94, '15 Quincy Center', 'Cave', 41);
 
-INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, specialty)
-VALUES ('chaton du desert','blablaloremipsum', 'nouvelle clef étrangère?', 'en cours', '2021-08-06', '2022-02-16', 15, 2, 7, 21, 13, 14, 5, 6, 10, 14, 12, 26, 14, 8);
-INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, specialty)
-VALUES ('titre2', 'description2', 'type2', 'en cours', '2021-06-19', '2021-08-30', 27, 7, 3, 10, 2, 14, 14, 12, 18, 15, 30, 30, 20, 6);
-INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, specialty)
-VALUES ('titre3', 'description3', 'type3', 'en cours', '2021-03-13', '2022-02-08', 24, 2, 9, 25, 12, 5, 5, 6, 17, 17, 26, 20, 11, 1);
+INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
+VALUES ('chaton du desert','blablaloremipsum', 'nouvelle clef étrangère?', 'en cours', '2021-08-06', '2022-02-16', 15, 1, 2, 7, 10, 2, 5, 9, 1, 10, 15, 2, 11, 18, 1);
+
+--INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
+--VALUES ('titre2', 'description2', 'type2', 'en cours', '2021-06-19', '2021-08-30', 27, 2, à remplir);
+--INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
+--VALUES ('titre3', 'description3', 'type3', 'en cours', '2021-03-13', '2022-02-08', 24, 3, à remplir);
 
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Iggie', 'Glave', 'iglave0@hao123.com', '1NNj5XuYS', '2020-06-23');
+VALUES ('Iggie', 'Glave', 'iglave0@hao123.com', '$2y$10$L8TNQSF5Fc6pgN5e63392usenO5kEzplpzwA7ATIP1JTWpXnuUiQy', '2020-06-23');
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Teodorico', 'Barbe', 'tbarbe1@nationalgeographic.com', '3sPgjA', '2019-09-14');
+VALUES ('Teodorico', 'Barbe', 'tbarbe1@nationalgeographic.com', '$2y$10$vfhn0mRZHTiIKkYY0.wrpOF5LxTdOtldIbG8LRwgQrIbenrhPoKvi', '2019-09-14');
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Tina', 'Gawthorp', 'tgawthorp2@taobao.com', 'rklBBO', '2016-05-22');
+VALUES ('Tina', 'Gawthorp', 'tgawthorp2@taobao.com', '$2y$10$Vu6R505iDYUUiBmNMe9rs.48bGwF7yaWpegS9UHSzAYBHtyCF5lmC', '2016-05-22');
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Maddie', 'Kivits', 'mkivits3@google.ca', 'o5OOY2Y', '2016-01-23');
+VALUES ('Maddie', 'Kivits', 'mkivits3@google.ca', '$2y$10$QkLkw9IAZ1xsYqEU77DpDeFUS2rlJ0bPgGIW0MgSOAHOHaL8QF8nq', '2016-01-23');
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Kari', 'Torbeck', 'ktorbeck4@time.com', 'FwXLAB', '2019-03-25');
+VALUES ('Kari', 'Torbeck', 'ktorbeck4@time.com', '$2y$10$KQpDHqF6U5b.WkBl9TrOtOcwkE2bniWm23Bf15j5hrUQ9xH.dIinu', '2019-03-25');
