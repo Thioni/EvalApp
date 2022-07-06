@@ -1,31 +1,10 @@
 <?php
   require_once 'classes/Agent.php';
 
-// Doctrine ----------------------------------------------------------------------------------------
-
-require_once 'vendor/autoload.php';
-
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\Tools\Setup;
-
-$dbParams = [
-  'driver' => 'pdo_mysql',
-  'user' => 'root',
-  'password' => '',
-];
-
-$configuration = Setup::createAnnotationMetadataConfiguration(['/entities'], true);
-//A passer en false une fois en prod
-
-$entityManger = EntityManager::create($dbParams, $configuration);
-
-// Fin Doctrine ------------------------------------------------------------------------------------
-
   $agent1 = new Agent();
   $agent1->name;
-
-
   $choice= 11;
+  
 ?>
 
 <div class="row mt-5">

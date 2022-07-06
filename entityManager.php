@@ -6,8 +6,6 @@ require_once 'vendor/autoload.php';
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
 
-
-
 function getEntityManager(): EntityManager
 {
   $dbParams = [
@@ -19,9 +17,9 @@ function getEntityManager(): EntityManager
   
   $configuration = Setup::createAnnotationMetadataConfiguration(['entities'], true, null, null, false);
   //A passer en false une fois en prod
-  // Pour tester sans executer :
+  // Pour tester la création des tables sans executer :
   // vendor/bin/doctrine orm:schema-tool:create --dump-sql
-  // Pour créer la table :
+  // Pour créer les tables :
   // vendor/bin/doctrine orm:schema-tool:create
   
   return EntityManager::create($dbParams, $configuration);
