@@ -26,11 +26,11 @@ CREATE TABLE agents (
 ) engine=InnoDB;
 
 CREATE TABLE agents_skills (
-  specialities_id INT(11) NOT NULL,
   agents_id INT(11) NOT NULL,
-  PRIMARY KEY (specialities_id, agents_id),
-  FOREIGN KEY (specialities_id) REFERENCES specialities(id),
-  FOREIGN KEY (agents_id) REFERENCES agents(id)
+  specialities_id INT(11) NOT NULL,
+  PRIMARY KEY (agents_id, specialities_id),
+  FOREIGN KEY (agents_id) REFERENCES agents(id),
+  FOREIGN KEY (specialities_id) REFERENCES specialities(id)
 ) engine=InnoDB;
 
 CREATE TABLE targets (
@@ -72,7 +72,7 @@ CREATE TABLE missions (
   mission_status VARCHAR(50) NOT NULL,
   date_start DATE NOT NULL,
   date_end DATE NOT NULL,
-  codename INt(11) NOT NULL UNIQUE,
+  codename INT(11) NOT NULL UNIQUE,
   country INT(11) NOT NULL,
   agent_one INT(11) NOT NULL,
   agent_two INT(11) NULL,
@@ -173,23 +173,23 @@ VALUES ('Austin', 'Powers', '1963-03-25', 940, 15);
 INSERT INTO agents (first_name, last_name, birthdate, code_agent, nationality)
 VALUES ('Léon', 'Reno', '1948-07-30', 724, 19);
 
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (1, 1);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (1, 7);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (2, 3);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (2, 6);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (3, 2);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (3, 9);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (4, 3);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (4, 5);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (4, 8);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (5, 5);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (5, 6);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (6, 6);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (7, 4);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (7, 10);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (8, 7);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (9, 5);
-INSERT INTO agents_skills (specialities_id, agents_id) VALUES (10, 9);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (1, 1);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (1, 7);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (2, 3);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (2, 6);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (3, 2);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (3, 9);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (4, 3);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (4, 5);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (4, 8);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (5, 5);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (5, 6);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (6, 6);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (7, 4);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (7, 10);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (8, 7);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (9, 5);
+INSERT INTO agents_skills (agents_id, specialities_id) VALUES (10, 9);
 
 INSERT INTO targets (first_name, last_name, birthdate, codename, nationality) 
 VALUES ('Nappie', 'Ruoff', '1989-09-21', 44, 41);
@@ -342,3 +342,9 @@ INSERT INTO administrators (first_name, last_name, mail, password, date_creation
 VALUES ('Maddie', 'Kivits', 'mkivits3@google.ca', '$2y$10$QkLkw9IAZ1xsYqEU77DpDeFUS2rlJ0bPgGIW0MgSOAHOHaL8QF8nq', '2016-01-23');
 INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
 VALUES ('Kari', 'Torbeck', 'ktorbeck4@time.com', '$2y$10$KQpDHqF6U5b.WkBl9TrOtOcwkE2bniWm23Bf15j5hrUQ9xH.dIinu', '2019-03-25');
+
+----------------------------------------- TESTS SQL ------------------------------------------------
+
+SELECT agents.first_name, specialities.skill FROM specialities 
+JOIN agents_skills ON specialities.id = agents_skills.specialities_id 
+JOIN agents ON agents_skills.agents_id = agents.id;
