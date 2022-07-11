@@ -37,10 +37,18 @@ class Mission {
     }
   }
 
-  // Getters - pour pouvoir acceder à nos valeurs, qui sont déclarées en private
-
-  public function getId() {
+  // Getters and Setters
+ 
+  public function getId()
+  {
     return $this->id;
+  }
+
+  public function setId($id)
+  {
+    $this->id = $id;
+
+    return $this;
   }
 
   public function getTitle()
@@ -48,11 +56,6 @@ class Mission {
     return $this->title;
   }
 
-    /**
-   * Set the value of title
-   *
-   * @return  self
-   */ 
   public function setTitle($title)
   {
     $this->title = $title;
@@ -65,9 +68,23 @@ class Mission {
     return $this->description;
   }
 
+  public function setDescription($description)
+  {
+    $this->description = $description;
+
+    return $this;
+  }
+
   public function getMission_type()
   {
     return $this->mission_type;
+  }
+
+  public function setMission_type($mission_type)
+  {
+    $this->mission_type = $mission_type;
+
+    return $this;
   }
 
   public function getMission_status()
@@ -75,9 +92,23 @@ class Mission {
     return $this->mission_status;
   }
 
+  public function setMission_status($mission_status)
+  {
+    $this->mission_status = $mission_status;
+
+    return $this;
+  }
+
   public function getDate_start()
   {
     return $this->date_start;
+  }
+
+  public function setDate_start($date_start)
+  {
+    $this->date_start = $date_start;
+
+    return $this;
   }
 
   public function getDate_end()
@@ -85,9 +116,23 @@ class Mission {
     return $this->date_end;
   }
 
+  public function setDate_end($date_end)
+  {
+    $this->date_end = $date_end;
+
+    return $this;
+  }
+
   public function getCodename()
   {
     return $this->codename;
+  }
+
+  public function setCodename($codename)
+  {
+    $this->codename = $codename;
+
+    return $this;
   }
 
   public function getCountry()
@@ -95,9 +140,23 @@ class Mission {
     return $this->country;
   }
 
+  public function setCountry($country)
+  {
+    $this->country = $country;
+
+    return $this;
+  }
+
   public function getAgent_one()
   {
     return $this->agent_one;
+  }
+
+  public function setAgent_one($agent_one)
+  {
+    $this->agent_one = $agent_one;
+
+    return $this;
   }
 
   public function getAgent_two()
@@ -105,9 +164,23 @@ class Mission {
     return $this->agent_two;
   }
 
+  public function setAgent_two($agent_two)
+  {
+    $this->agent_two = $agent_two;
+
+    return $this;
+  }
+
   public function getAgent_three()
   {
     return $this->agent_three;
+  }
+
+  public function setAgent_three($agent_three)
+  {
+    $this->agent_three = $agent_three;
+
+    return $this;
   }
 
   public function getTarget_one()
@@ -115,9 +188,23 @@ class Mission {
     return $this->target_one;
   }
 
+  public function setTarget_one($target_one)
+  {
+    $this->target_one = $target_one;
+
+    return $this;
+  }
+
   public function getTarget_two()
   {
     return $this->target_two;
+  }
+
+  public function setTarget_two($target_two)
+  {
+    $this->target_two = $target_two;
+
+    return $this;
   }
 
   public function getTarget_three()
@@ -125,9 +212,23 @@ class Mission {
     return $this->target_three;
   }
 
+  public function setTarget_three($target_three)
+  {
+    $this->target_three = $target_three;
+
+    return $this;
+  }
+
   public function getContact_one()
   {
     return $this->contact_one;
+  }
+
+  public function setContact_one($contact_one)
+  {
+    $this->contact_one = $contact_one;
+
+    return $this;
   }
 
   public function getContact_two()
@@ -135,9 +236,23 @@ class Mission {
     return $this->contact_two;
   }
 
+  public function setContact_two($contact_two)
+  {
+    $this->contact_two = $contact_two;
+
+    return $this;
+  }
+
   public function getContact_three()
   {
     return $this->contact_three;
+  }
+
+  public function setContact_three($contact_three)
+  {
+    $this->contact_three = $contact_three;
+
+    return $this;
   }
 
   public function getHideout_one()
@@ -145,9 +260,23 @@ class Mission {
     return $this->hideout_one;
   }
 
+  public function setHideout_one($hideout_one)
+  {
+    $this->hideout_one = $hideout_one;
+
+    return $this;
+  }
+
   public function getHideout_two()
   {
     return $this->hideout_two;
+  }
+
+  public function setHideout_two($hideout_two)
+  {
+    $this->hideout_two = $hideout_two;
+
+    return $this;
   }
 
   public function getHideout_three()
@@ -155,9 +284,22 @@ class Mission {
     return $this->hideout_three;
   }
 
+  public function setHideout_three($hideout_three)
+  {
+    $this->hideout_three = $hideout_three;
+
+    return $this;
+  }
+
   public function getSpeciality()
   {
     return $this->speciality;
   }
 
+  public function setSpeciality($speciality)
+  {
+    $this->speciality = $speciality;
+
+    return $this;
+  }
 }

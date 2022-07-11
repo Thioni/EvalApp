@@ -1,8 +1,8 @@
 <?php
-  require_once 'classes/Agent.php';
+  //require_once 'classes/Agent.php';
 
-  $agent1 = new Agent();
-  $agent1->name;
+  //$agent1 = new Agent();
+  //$agent1->name;
   $choice= 11;
   
 ?>
