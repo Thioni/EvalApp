@@ -2,8 +2,7 @@
   require 'CountryManager.php';
   $managerCountry = new CountryManager();
   $countries = $managerCountry->getAll();
-  define('COUNTRIES', $managerCountry->getAll());
-
+ 
   require 'MissionManager.php';
   $managerMission = new MissionManager();
   $missions = $managerMission->getAll();
@@ -15,17 +14,6 @@
   //$choice= 11;
   
 ?>
-
-    <section class="d-flex flex-wrap justify-content-center">
-        <?php foreach ($missions as $mission): ?>
-                <div class="card-body">
-                    <h5 class="card-title"><?= $mission->getTitle() ?></h5>
-        <?php endforeach; ?>
-        <?php foreach ($countries as $country): ?>
-                    <p class="card-text"><?= $mission->getCountry() === $country->getId() ? $country->getLocation() : ""  ?></p>
-        <?php endforeach; ?>
-                </div>
-    </section>
 
 <div class="row mt-5">
   <div class="col-2 test">

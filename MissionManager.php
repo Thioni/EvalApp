@@ -24,8 +24,8 @@ class MissionManager {
     $request->bindValue(":description", $mission->getDescription(), PDO::PARAM_STR);
     $request->bindValue(":mission_type", $mission->getMission_type(), PDO::PARAM_STR);
     $request->bindValue(":mission_status", $mission->getMission_status(), PDO::PARAM_STR);
-    $request->bindValue(":date_start", $mission->getDAte_start(), PDO::PARAM_STR);
-    $request->bindValue(":date_end", $mission->getDAte_end(), PDO::PARAM_STR);
+    $request->bindValue(":date_start", $mission->getDate_start(), PDO::PARAM_STR);
+    $request->bindValue(":date_end", $mission->getDate_end(), PDO::PARAM_STR);
     $request->bindValue(":codename", $mission->getCodename(), PDO::PARAM_INT);
     $request->bindValue(":country", $mission->getCountry(), PDO::PARAM_INT);
     $request->bindValue(":agent_one", $mission->getAgent_one(), PDO::PARAM_INT);
@@ -56,8 +56,7 @@ class MissionManager {
   
   public function getAll() {
     $missions = [];
-    $request = $this->db->query("SELECT missions.title, missions.country, countries.location FROM missions JOIN countries ON missions.country = countries.id ");
-//    $request = $this->db->query("SELECT * FROM `missions`");
+    $request = $this->db->query("SELECT * FROM `missions`");
     $allData = $request->fetchAll();
     foreach ($allData as $data) {
       $mission = new Mission($data);
