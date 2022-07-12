@@ -11,7 +11,7 @@ class MissionManager {
     $username = "root";
     $password = "";
     try {
-      $this->db = new PDO("mysql:host=localhost;dbname=$dbName';port=$port,$username,$password");
+      $this->db = new PDO("mysql:host=localhost;dbname=$dbName;port=$port", $username, $password);
     } catch(PDOException $exception) {
       echo $exception->getMessage();
     }
@@ -26,21 +26,21 @@ class MissionManager {
     $request->bindValue(":mission_status", $mission->getMission_status(), PDO::PARAM_STR);
     $request->bindValue(":date_start", $mission->getDAte_start(), PDO::PARAM_STR);
     $request->bindValue(":date_end", $mission->getDAte_end(), PDO::PARAM_STR);
-    $request->bindValue(":codename", $mission->getCodename(), PDO::PARAM_STR);
-    $request->bindValue(":country", $mission->getCountry(), PDO::PARAM_STR);
-    $request->bindValue(":agent_one", $mission->getAgent_one(), PDO::PARAM_STR);
-    $request->bindValue(":agent_two", $mission->getAgent_two(), PDO::PARAM_STR);
-    $request->bindValue(":agent_three", $mission->getAgent_three(), PDO::PARAM_STR);
-    $request->bindValue(":target_one", $mission->getTarget_one(), PDO::PARAM_STR);
-    $request->bindValue(":target_two", $mission->getTarget_two(), PDO::PARAM_STR);
-    $request->bindValue(":target_three", $mission->getTarget_three(), PDO::PARAM_STR);
-    $request->bindValue(":contact_one", $mission->getContact_one(), PDO::PARAM_STR);
-    $request->bindValue(":contact_two", $mission->getContact_two(), PDO::PARAM_STR);
-    $request->bindValue(":contact_three", $mission->getContact_three(), PDO::PARAM_STR);
-    $request->bindValue(":hideout_one", $mission->getHideout_one(), PDO::PARAM_STR);
-    $request->bindValue(":hideout_two", $mission->getHideout_two(), PDO::PARAM_STR);
-    $request->bindValue(":hideout_three", $mission->getHideout_three(), PDO::PARAM_STR);
-    $request->bindValue(":speciality", $mission->getSpeciality(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $mission->getCodename(), PDO::PARAM_INT);
+    $request->bindValue(":country", $mission->getCountry(), PDO::PARAM_INT);
+    $request->bindValue(":agent_one", $mission->getAgent_one(), PDO::PARAM_INT);
+    $request->bindValue(":agent_two", $mission->getAgent_two(), PDO::PARAM_INT);
+    $request->bindValue(":agent_three", $mission->getAgent_three(), PDO::PARAM_INT);
+    $request->bindValue(":target_one", $mission->getTarget_one(), PDO::PARAM_INT);
+    $request->bindValue(":target_two", $mission->getTarget_two(), PDO::PARAM_INT);
+    $request->bindValue(":target_three", $mission->getTarget_three(), PDO::PARAM_INT);
+    $request->bindValue(":contact_one", $mission->getContact_one(), PDO::PARAM_INT);
+    $request->bindValue(":contact_two", $mission->getContact_two(), PDO::PARAM_INT);
+    $request->bindValue(":contact_three", $mission->getContact_three(), PDO::PARAM_INT);
+    $request->bindValue(":hideout_one", $mission->getHideout_one(), PDO::PARAM_INT);
+    $request->bindValue(":hideout_two", $mission->getHideout_two(), PDO::PARAM_INT);
+    $request->bindValue(":hideout_three", $mission->getHideout_three(), PDO::PARAM_INT);
+    $request->bindValue(":speciality", $mission->getSpeciality(), PDO::PARAM_INT);
   
     $request->execute();
   }
@@ -56,7 +56,8 @@ class MissionManager {
   
   public function getAll() {
     $missions = [];
-    $request = $this->db->query("SELECT * FROM `missions`");
+    $request = $this->db->query("SELECT missions.title, missions.country, countries.location FROM missions JOIN countries ON missions.country = countries.id ");
+//    $request = $this->db->query("SELECT * FROM `missions`");
     $allData = $request->fetchAll();
     foreach ($allData as $data) {
       $mission = new Mission($data);
@@ -75,21 +76,21 @@ class MissionManager {
     $request->bindValue(":mission_status", $mission->getMission_status(), PDO::PARAM_STR);
     $request->bindValue(":date_start", $mission->getDAte_start(), PDO::PARAM_STR);
     $request->bindValue(":date_end", $mission->getDAte_end(), PDO::PARAM_STR);
-    $request->bindValue(":codename", $mission->getCodename(), PDO::PARAM_STR);
-    $request->bindValue(":country", $mission->getCountry(), PDO::PARAM_STR);
-    $request->bindValue(":agent_one", $mission->getAgent_one(), PDO::PARAM_STR);
-    $request->bindValue(":agent_two", $mission->getAgent_two(), PDO::PARAM_STR);
-    $request->bindValue(":agent_three", $mission->getAgent_three(), PDO::PARAM_STR);
-    $request->bindValue(":target_one", $mission->getTarget_one(), PDO::PARAM_STR);
-    $request->bindValue(":target_two", $mission->getTarget_two(), PDO::PARAM_STR);
-    $request->bindValue(":target_three", $mission->getTarget_three(), PDO::PARAM_STR);
-    $request->bindValue(":contact_one", $mission->getContact_one(), PDO::PARAM_STR);
-    $request->bindValue(":contact_two", $mission->getContact_two(), PDO::PARAM_STR);
-    $request->bindValue(":contact_three", $mission->getContact_three(), PDO::PARAM_STR);
-    $request->bindValue(":hideout_one", $mission->getHideout_one(), PDO::PARAM_STR);
-    $request->bindValue(":hideout_two", $mission->getHideout_two(), PDO::PARAM_STR);
-    $request->bindValue(":hideout_three", $mission->getHideout_three(), PDO::PARAM_STR);
-    $request->bindValue(":speciality", $mission->getSpeciality(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $mission->getCodename(), PDO::PARAM_INT);
+    $request->bindValue(":country", $mission->getCountry(), PDO::PARAM_INT);
+    $request->bindValue(":agent_one", $mission->getAgent_one(), PDO::PARAM_INT);
+    $request->bindValue(":agent_two", $mission->getAgent_two(), PDO::PARAM_INT);
+    $request->bindValue(":agent_three", $mission->getAgent_three(), PDO::PARAM_INT);
+    $request->bindValue(":target_one", $mission->getTarget_one(), PDO::PARAM_INT);
+    $request->bindValue(":target_two", $mission->getTarget_two(), PDO::PARAM_INT);
+    $request->bindValue(":target_three", $mission->getTarget_three(), PDO::PARAM_INT);
+    $request->bindValue(":contact_one", $mission->getContact_one(), PDO::PARAM_INT);
+    $request->bindValue(":contact_two", $mission->getContact_two(), PDO::PARAM_INT);
+    $request->bindValue(":contact_three", $mission->getContact_three(), PDO::PARAM_INT);
+    $request->bindValue(":hideout_one", $mission->getHideout_one(), PDO::PARAM_INT);
+    $request->bindValue(":hideout_two", $mission->getHideout_two(), PDO::PARAM_INT);
+    $request->bindValue(":hideout_three", $mission->getHideout_three(), PDO::PARAM_INT);
+    $request->bindValue(":speciality", $mission->getSpeciality(), PDO::PARAM_INT);
 
     $req->execute();
 

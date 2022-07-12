@@ -16,8 +16,6 @@ require_once 'vendor/autoload.php';
 require_once 'entityManager.php';
 include 'vues/header.html';
 include 'vues/missions.php';
-include 'MissionManager.php';
-include 'CountryManager.php';
 include 'vues/footer.html';
 
 $entityManager = getEntityManager();
