@@ -12,21 +12,40 @@
   $agents = $managerAgent->getAll();
 ?>
 
-  <section class="row">
-      <?php foreach ($missions as $mission): ?>
-                  <div class="col-3 test"><?= $mission->getTitle() ?></div>
-      <?php endforeach; ?>
-      <?php foreach ($countries as $country): ?>
-                  <div class="col-1 test2"><?= $mission->getCountry() === $country->getId() ? $country->getLocation() : false ?></div>
-      <?php endforeach; ?>
-      <?php foreach ($agents as $agent): ?>
-                  <div class="col-8 test3"><?= $mission->getAgent_one() === $agent->getId() ? $agent->getFirst_name() : "" ?></div>
-      <?php endforeach; ?>
-      <?php //var_dump($country); ?>
-  </section>
+    <section class="row">
 
-  <section class="row mt-5">
-                  <div class="col-4 test">Titre</div>
-                  <div class="col-4 test2">Country</div>
-                  <div class="col-4 test3">Agent_one</div>
+      <div class="col test">1</div>
+      <div class="col test2">2</div>
+      <div class="col test3">3</div>
+      <div class="col test">4</div>
+      <div class="col test2">5</div>
+      <div class="col test3">6</div>
+
+    </section>
+
+  <section class="row">
+
+      <div class="col test">
+        <?php foreach ($missions as $mission):
+          echo $mission->getTitle();
+        endforeach; ?>
+      </div>
+
+      <div class="col test2">
+        <?php foreach ($countries as $country):
+          echo $mission->getCountry() === $country->getId() ? $country->getLocation() : "";
+         endforeach; ?>
+      </div>
+
+      <div class="col test3">
+        <?php foreach ($agents as $agent):
+          echo $mission->getAgent_one() === $agent->getId() ? $agent->getFirst_name() : "";
+          // tester avec $agent->getFirst_name().<br> pour concatener un saut de ligne quand plusieurs noms 
+        endforeach; ?>
+      </div>
+
+      <div class="col test">4</div>
+      <div class="col test2">5</div>
+      <div class="col test3">6</div>
+
   </section>
