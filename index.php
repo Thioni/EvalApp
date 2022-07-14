@@ -12,13 +12,13 @@
 </head>
 
 <?php
-require_once 'vendor/autoload.php';
-require_once 'entityManager.php';
+//require_once 'vendor/autoload.php';
+//require_once 'entityManager.php';
 include 'vues/header.html';
 include 'vues/missionsList.php';
 include 'vues/footer.html';
 
-$entityManager = getEntityManager();
+//$entityManager = getEntityManager();
 
 
 ?>

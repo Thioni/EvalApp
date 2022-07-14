@@ -326,9 +326,9 @@ VALUES (94, '15 Quincy Center', 'Cave', 41);
 
 INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
 VALUES ('chaton du desert','blablaloremipsum', 'nouvelle clef étrangère?', 'en cours', '2021-08-06', '2022-02-16', 15, 1, 2, 7, 10, 2, 5, 9, 1, 10, 15, 2, 11, 18, 1);
+INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
+VALUES ('titre2', 'description2', 'type2', 'en cours', '2021-06-19', '2021-08-30', 27, 2, 4, NULL, NULL, 5, NULL, NULL, 2, NULL, NULL, 2, NULL, NULL, 6);
 
---INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
---VALUES ('titre2', 'description2', 'type2', 'en cours', '2021-06-19', '2021-08-30', 27, 2, à remplir);
 --INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
 --VALUES ('titre3', 'description3', 'type3', 'en cours', '2021-03-13', '2022-02-08', 24, 3, à remplir);
 

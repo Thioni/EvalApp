@@ -3,6 +3,7 @@
 class Agent {
   private $id;
   private $first_name;
+  private $last_name;
 
   public function __construct(array $data) {
     $this->hydrate($data);
@@ -39,6 +40,17 @@ class Agent {
   public function setFirst_name($first_name)
   {
       $this->first_name = $first_name;
+      return $this;
+  }
+
+  public function getLast_name()
+  {
+      return $this->last_name;
+  }
+  
+  public function setLast_name($last_name)
+  {
+      $this->last_name = $last_name;
       return $this;
   }
 }
