@@ -25,45 +25,52 @@ foreach ($missions as $mission): ?>
 
     <section class="row">
 
-      <div class="col-1 test3">TITLE</div>
-      <div class="col-1 test3">MISSION TYPE</div>
-      <div class="col-1 test3">MISSION STATUS</div>
-      <div class="col-1 test3">START DATE</div>
-      <div class="col-1 test3">END DATE</div>
-      <div class="col-1 test3">COUNTRY</div>
-      <div class="col-1 test3">CODENAME</div>
-      <div class="col-1 test3">AGENT</div>
-      <div class="col-1 test3">TARGET</div>
-      <div class="col-1 test3">CONTACT</div>
-      <div class="col-1 test3">HIDEOUT</div>
-      <div class="col-1 test3">SPECIALITY</div>
+      <div class="col-1 vertF text-center">OPERATION</div>
+      <div class="col-1 vertC text-center"><?= $mission->getTitle()."<br>"; ?></div>
+      <div class="col-1 orangF text-center">DESCRIPTION</div>
+      <div class="col-9 orangC">
+      Ce texte fait 199 caractères Irure consequat nulla nisi minim nostrud laborum velit sint ex ea anim do dolore reprehenderit.
+      Irure reprehenderit voluptate excepteur dolore laborum voluptate excepteur
+      </div>
+
+    </section>
+
+    <section class="row">
+
+      <div class="col-1 bleuF text-center">MISSION TYPE</div>
+      <div class="col-1 bleuF text-center">MISSION STATUS</div>
+      <div class="col-1 bleuF text-center">START DATE</div>
+      <div class="col-1 bleuF text-center">END DATE</div>
+      <div class="col-2 bleuF text-center">COUNTRY</div>
+      <div class="col-1 bleuF text-center">CODENAME</div>
+      <div class="col-1 bleuF text-center">AGENT</div>
+      <div class="col-1 bleuF text-center">TARGET</div>
+      <div class="col-1 bleuF text-center">CONTACT</div>
+      <div class="col-1 bleuF text-center">HIDEOUT</div>
+      <div class="col-1 bleuF text-center">SPECIALITY</div>
 
     </section>
     
-    <section class="row mb-1">
+    <section class="row mb-3">
 
-      <div class="col-1 test">
-        <?= $mission->getTitle()."<br>"; ?>
-      </div >
+      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center"></div>
 
-      <div class="col-1 test2"></div>
-      <div class="col-1 test"></div>
-      <div class="col-1 test2"></div>
-      <div class="col-1 test"></div>
-
-      <div class="col-1 test2">
+      <div class="col-2 bleuC text-center">
         <?php foreach ($countries as $country):
           echo $mission->getCountry() === $country->getId() ? $country->getLocation() : "";
         endforeach; ?>
       </div >
 
-      <div class="col-1 test">
+      <div class="col-1 bleuC text-center">
         <?php foreach ($codenames as $codename):
           echo $mission->getCodename() === $codename->getId() ? $codename->getAlias() : "";
         endforeach; ?>
       </div >
 
-      <div class="col-1 test2">
+      <div class="col-1 bleuC text-center">
         <?php foreach ($agents as $agent):
           echo $mission->getAgent_one() === $agent->getId() ? $agent->getFirst_name()." ".$agent->getLast_name()."<br>" : "";
           echo $mission->getAgent_two() === $agent->getId() ? $agent->getFirst_name()." ".$agent->getLast_name()."<br>" : "";
@@ -71,7 +78,7 @@ foreach ($missions as $mission): ?>
         endforeach; ?>
       </div>
 
-      <div class="col-1 test">
+      <div class="col-1 bleuC text-center">
         <?php foreach ($targets as $target):
           echo $mission->getTarget_one() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
           echo $mission->getTarget_two() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
@@ -79,9 +86,9 @@ foreach ($missions as $mission): ?>
         endforeach; ?>
       </div>
         
-      <div class="col-1 test2"></div>
-      <div class="col-1 test"></div>
-      <div class="col-1 test2"></div>
+      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center"></div>
 
     </section>
 

@@ -7,18 +7,34 @@
   color: #e91389;
 }
 
-.test {
+.bleuF {
   background-color: rgb(102, 106, 153)
 }
 
-.test2 {
+.vertF {
   background-color: rgb(43, 134, 51)
 }
 
-.test3 {
+.vertC {
+  background-color: rgba(43, 134, 51, 0.432)
+}
+
+.orangF {
   background-color: rgb(221, 98, 26)
 }
 
-/*.footer {
+.orangC {
+  background-color: rgba(221, 98, 26, 0.384)
+}
+
+.bleuC {
+  background-color: rgba(102, 106, 153, 0.288)
+}
+
+.titles {
+  height: 72px;
+}
+
+.footer {
   height: 100px;
-}*/
+}
