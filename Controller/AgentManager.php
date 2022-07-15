@@ -1,6 +1,6 @@
 <?php
 
-require("classes/Agent.php");
+require("Model/Agent.php");
 
 class AgentManager {
   private $db;
@@ -18,7 +18,7 @@ class AgentManager {
   }
 
   public function create(Agent $agent) {
-    $request = $this->db->prepare("INSERT INTO `agents` (xxx, xxx) VALUE (:xxx, :xxx)");
+    $request = $this->db->prepare("INSERT INTO `agents` (first_name, last_name, birthdate, code_agent, nationality) VALUE (:first_name, :last_name, :birthdate, :code_agent, :nationality)");
   
     $request->bindValue(":xxx", $agent->getXXX(), PDO::PARAM_STR);
   
@@ -47,7 +47,7 @@ class AgentManager {
   
   public function update(Agent $agent)
   {
-    $req = $this->db->prepare("UPDATE `agents` SET xxx = :xxx, xxx = :xxx");
+    $req = $this->db->prepare("UPDATE `agents` SET first_name = :first_name, last_name = :last_name, birthdate = :birthdate, code_agent = :code_agent, nationality = :nationality");
 
     $request->bindValue(":xxx", $agent->getTitle(), PDO::PARAM_STR);
 

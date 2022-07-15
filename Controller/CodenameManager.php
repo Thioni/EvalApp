@@ -1,6 +1,6 @@
 <?php
 
-require("classes/Codename.php");
+require("Model/Codename.php");
 
 class CodenameManager {
   private $db;

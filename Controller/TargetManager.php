@@ -1,6 +1,6 @@
 <?php
 
-require("classes/Target.php");
+require("Model/Target.php");
 
 class TargetManager {
   private $db;
@@ -18,7 +18,7 @@ class TargetManager {
   }
 
   public function create(Target $target) {
-    $request = $this->db->prepare("INSERT INTO `targets` (first_name = :first_name, last_name = :last_name, birthdate = :birthdate, codename = :codename, nationality = :nationality");
+    $request = $this->db->prepare("INSERT INTO `targets` (first_name, last_name, birthdate, codename, nationality) VALUE (:first_name, :last_name, :birthdate, :codename, :nationality)");
   
     $request->bindValue(":first_name", $mission->getTitle(), PDO::PARAM_STR);
     $request->bindValue(":last_name", $mission->getDescription(), PDO::PARAM_STR);

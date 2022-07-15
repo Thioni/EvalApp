@@ -1,6 +1,6 @@
 <?php
 
-require("classes/Country.php");
+require("Model/Country.php");
 
 class CountryManager {
   private $db;

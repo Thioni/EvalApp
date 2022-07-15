@@ -1,21 +1,21 @@
 <?php
-  require 'MissionManager.php';
+  require 'Controller/MissionManager.php';
   $managerMission = new MissionManager();
   $missions = $managerMission->getAll();
   
-  require 'CountryManager.php';
+  require 'Controller/CountryManager.php';
   $managerCountry = new CountryManager();
   $countries = $managerCountry->getAll();
 
-  require 'CodenameManager.php';
+  require 'Controller/CodenameManager.php';
   $managerCodename = new CodenameManager();
   $codenames = $managerCodename->getAll();
 
-  require 'AgentManager.php';
+  require 'Controller/AgentManager.php';
   $managerAgent = new AgentManager();
   $agents = $managerAgent->getAll();
 
-  require 'TargetManager.php';
+  require 'Controller/TargetManager.php';
   $managerTarget = new TargetManager();
   $targets = $managerTarget->getAll();
 
@@ -95,7 +95,13 @@ foreach ($missions as $mission): ?>
         endforeach; ?>
       </div>
         
-      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center">
+      <?php foreach ($targets as $target):
+          echo $mission->getContact_one() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
+          echo $mission->getContact_two() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
+          echo $mission->getContact_three() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
+        endforeach; ?>
+      </div>
       <div class="col-1 bleuC text-center"></div>
       <div class="col-1 bleuC text-center"></div>
 

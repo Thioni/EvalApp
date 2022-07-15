@@ -1,6 +1,6 @@
 <?php
 
-require("classes/Mission.php");
+require("Model/Mission.php");
 
 class MissionManager {
   private $db;
