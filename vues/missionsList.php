@@ -25,34 +25,45 @@ foreach ($missions as $mission): ?>
 
     <section class="row">
 
-      <div class="col-2 test3">TITLE</div>
-      <div class="col-2 test3">COUNTRY</div>
-      <div class="col-2 test3">CODENAME</div>
-      <div class="col-2 test3">AGENT</div>
-      <div class="col-2 test3">TARGET</div>
-      <div class="col-2 test3">CONTACT</div>
+      <div class="col-1 test3">TITLE</div>
+      <div class="col-1 test3">MISSION TYPE</div>
+      <div class="col-1 test3">MISSION STATUS</div>
+      <div class="col-1 test3">START DATE</div>
+      <div class="col-1 test3">END DATE</div>
+      <div class="col-1 test3">COUNTRY</div>
+      <div class="col-1 test3">CODENAME</div>
+      <div class="col-1 test3">AGENT</div>
+      <div class="col-1 test3">TARGET</div>
+      <div class="col-1 test3">CONTACT</div>
+      <div class="col-1 test3">HIDEOUT</div>
+      <div class="col-1 test3">SPECIALITY</div>
 
     </section>
     
     <section class="row mb-1">
 
-      <div class="col-2 test">
+      <div class="col-1 test">
         <?= $mission->getTitle()."<br>"; ?>
       </div >
 
-      <div class="col-2 test2">
+      <div class="col-1 test2"></div>
+      <div class="col-1 test"></div>
+      <div class="col-1 test2"></div>
+      <div class="col-1 test"></div>
+
+      <div class="col-1 test2">
         <?php foreach ($countries as $country):
           echo $mission->getCountry() === $country->getId() ? $country->getLocation() : "";
         endforeach; ?>
       </div >
 
-      <div class="col-2 test">
+      <div class="col-1 test">
         <?php foreach ($codenames as $codename):
           echo $mission->getCodename() === $codename->getId() ? $codename->getAlias() : "";
         endforeach; ?>
       </div >
 
-      <div class="col-2 test2">
+      <div class="col-1 test2">
         <?php foreach ($agents as $agent):
           echo $mission->getAgent_one() === $agent->getId() ? $agent->getFirst_name()." ".$agent->getLast_name()."<br>" : "";
           echo $mission->getAgent_two() === $agent->getId() ? $agent->getFirst_name()." ".$agent->getLast_name()."<br>" : "";
@@ -60,7 +71,7 @@ foreach ($missions as $mission): ?>
         endforeach; ?>
       </div>
 
-      <div class="col-2 test">
+      <div class="col-1 test">
         <?php foreach ($targets as $target):
           echo $mission->getTarget_one() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
           echo $mission->getTarget_two() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
@@ -68,7 +79,9 @@ foreach ($missions as $mission): ?>
         endforeach; ?>
       </div>
         
-      <div class="col-2 test2">contact placeholder</div>
+      <div class="col-1 test2"></div>
+      <div class="col-1 test"></div>
+      <div class="col-1 test2"></div>
 
     </section>
 
