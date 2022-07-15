@@ -1,23 +1,27 @@
 <?php
-  require 'CountryManager.php';
-  $managerCountry = new CountryManager();
-  $countries = $managerCountry->getAll();
- 
   require 'MissionManager.php';
   $managerMission = new MissionManager();
   $missions = $managerMission->getAll();
-
-  require 'AgentManager.php';
-  $managerAgent = new AgentManager();
-  $agents = $managerAgent->getAll();
+  
+  require 'CountryManager.php';
+  $managerCountry = new CountryManager();
+  $countries = $managerCountry->getAll();
 
   require 'CodenameManager.php';
   $managerCodename = new CodenameManager();
   $codenames = $managerCodename->getAll();
 
+  require 'AgentManager.php';
+  $managerAgent = new AgentManager();
+  $agents = $managerAgent->getAll();
+
   require 'TargetManager.php';
   $managerTarget = new TargetManager();
   $targets = $managerTarget->getAll();
+
+  //require 'ContactManager.php';
+  //$managerContact = new ContactManager();
+  //$contacts = $managerContact->getAll();
 
 foreach ($missions as $mission): ?>
 
@@ -28,9 +32,8 @@ foreach ($missions as $mission): ?>
       <div class="col-1 vertF text-center">OPERATION</div>
       <div class="col-1 vertC text-center"><?= $mission->getTitle()."<br>"; ?></div>
       <div class="col-1 orangF text-center">DESCRIPTION</div>
-      <div class="col-9 orangC">
-      Ce texte fait 199 caractères Irure consequat nulla nisi minim nostrud laborum velit sint ex ea anim do dolore reprehenderit.
-      Irure reprehenderit voluptate excepteur dolore laborum voluptate excepteur
+      <div class="col-9 orangC"><?= $mission->getDescription()."<br>"; ?>
+                                <!-- 199 caractères avant breakpoint -->
       </div>
 
     </section>
@@ -53,10 +56,16 @@ foreach ($missions as $mission): ?>
     
     <section class="row mb-3">
 
-      <div class="col-1 bleuC text-center"></div>
-      <div class="col-1 bleuC text-center"></div>
-      <div class="col-1 bleuC text-center"></div>
-      <div class="col-1 bleuC text-center"></div>
+      <div class="col-1 bleuC text-center"><?= $mission->getMission_type(); ?></div>
+      <div class="col-1 bleuC text-center"><?= $mission->getMission_status(); ?></div>
+      <div class="col-1 bleuC text-center">
+        <?php $convertTimestamp = strtotime($mission->getDate_start());
+        echo $frenchFormat = date("d-m-Y", $convertTimestamp); ?>
+      </div>
+      <div class="col-1 bleuC text-center">
+      <?php $convertTimestamp = strtotime($mission->getDate_end());
+        echo $frenchFormat = date("d-m-Y", $convertTimestamp); ?>
+      </div>
 
       <div class="col-2 bleuC text-center">
         <?php foreach ($countries as $country):
