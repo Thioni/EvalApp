@@ -19,9 +19,17 @@
   $managerTarget = new TargetManager();
   $targets = $managerTarget->getAll();
 
-  //require 'ContactManager.php';
-  //$managerContact = new ContactManager();
-  //$contacts = $managerContact->getAll();
+  require 'Controller/ContactManager.php';
+  $managerContact = new ContactManager();
+  $contacts = $managerContact->getAll();
+
+  require 'Controller/HideoutManager.php';
+  $managerHideout = new HideoutManager();
+  $hideouts = $managerHideout->getAll();
+
+  require 'Controller/SpecialityManager.php';
+  $managerSpeciality = new SpecialityManager();
+  $specialities = $managerSpeciality->getAll();
 
 foreach ($missions as $mission): ?>
 
@@ -44,12 +52,12 @@ foreach ($missions as $mission): ?>
       <div class="col-1 bleuF text-center">MISSION STATUS</div>
       <div class="col-1 bleuF text-center">START DATE</div>
       <div class="col-1 bleuF text-center">END DATE</div>
-      <div class="col-2 bleuF text-center">COUNTRY</div>
+      <div class="col-1 bleuF text-center">COUNTRY</div>
       <div class="col-1 bleuF text-center">CODENAME</div>
       <div class="col-1 bleuF text-center">AGENT</div>
       <div class="col-1 bleuF text-center">TARGET</div>
       <div class="col-1 bleuF text-center">CONTACT</div>
-      <div class="col-1 bleuF text-center">HIDEOUT</div>
+      <div class="col-2 bleuF text-center">HIDEOUT</div>
       <div class="col-1 bleuF text-center">SPECIALITY</div>
 
     </section>
@@ -67,16 +75,16 @@ foreach ($missions as $mission): ?>
         echo $frenchFormat = date("d-m-Y", $convertTimestamp); ?>
       </div>
 
-      <div class="col-2 bleuC text-center">
-        <?php foreach ($countries as $country):
-          echo $mission->getCountry() === $country->getId() ? $country->getLocation() : "";
-        endforeach; ?>
+      <div class="col-1 bleuC text-center">
+        <?php foreach ($countries as $country): ?>
+          <?= $mission->getCountry() === $country->getId() ? $country->getLocation() : ""; ?>
+        <?php endforeach; ?>
       </div >
 
       <div class="col-1 bleuC text-center">
-        <?php foreach ($codenames as $codename):
-          echo $mission->getCodename() === $codename->getId() ? $codename->getAlias() : "";
-        endforeach; ?>
+        <?php foreach ($codenames as $codename): ?>
+          <?= $mission->getCodename() === $codename->getId() ? $codename->getAlias() : ""; ?>
+        <?php endforeach; ?>
       </div >
 
       <div class="col-1 bleuC text-center">
@@ -102,8 +110,20 @@ foreach ($missions as $mission): ?>
           echo $mission->getContact_three() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
         endforeach; ?>
       </div>
-      <div class="col-1 bleuC text-center"></div>
-      <div class="col-1 bleuC text-center"></div>
+
+      <div class="col-2 bleuC text-center">
+        <?php foreach ($hideouts as $hideout):
+          echo $mission->getContact_one() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
+          echo $mission->getContact_two() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
+          echo $mission->getContact_three() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
+        endforeach; ?>
+      </div>
+
+      <div class="col-1 bleuC text-center">
+        <?php foreach ($specialities as $speciality): ?>
+          <?= $mission->getSpeciality() === $speciality->getId() ? $speciality->getSkill() : ""; ?>
+        <?php endforeach; ?>
+      </div>
 
     </section>
 
