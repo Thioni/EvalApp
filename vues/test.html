@@ -1,1 +1,65 @@
-test
+<main class="container-fluid">
+
+  <form method="post" class="row m-0">
+
+    <label for="titre" class="form-label col-2">Titre</label>
+      <input type="text" name="titre" placeholder="Titre de la mission" id="titre" class="col-2" minlength="10" maxlength="30">
+
+    <label for="description" class="form-label">Description</label>
+      <textarea name="description" id="description" class="col-6" rows="2" placeholder="Déscription de la mission" minlength="10" maxlength="150"></textarea>
+   
+  </form>
+
+  <form action="post" class="row m-0">
+      
+    <!-- inutile pour le "create", à conserver pour le "update"
+
+    <div class="col-2">
+      <label for="status">Status mission</label>
+      <select name="status" id="status" class="form-select">
+        <option selected>En préparation</option>
+        <option selected>En cours</option>
+        <option selected>Terminée</option>
+      </select>
+    </div>
+
+    ------------------------------------------------------ -->
+
+
+    <div class="col-1">
+      <label for="début">Date de début</label>
+      </br>
+      <input type="date" id="début" name="début">
+    </div>  
+
+    <div class="col-1">
+      <label for="fin">Date de fin</label>
+      </br>
+      <input type="date" id="fin" name="fin">
+    </div>
+    
+    <div class="col-2">
+      <label for="type">Pays</label>
+      <select name="type" id="type" class="form-select">
+        <?php foreach ($countries as $country): ?>
+          <option value=""><?= $country->getLocation(); ?></option>
+        <?php endforeach ?>
+      </select>
+    </div>
+
+    <div class="col-2">
+    <label for="code" class="form-label">Nom de code</label>
+    <input type="text" name="code" placeholder="Code" id="code" minlength="10" maxlength="30">
+    </div>
+
+  </form>
+
+  <!-- Bouton de confirmation -->  
+
+  <div class="row m-0 mt-4">
+    <div class="col-2">
+      <input type="submit" class="btn btn-success" value="Créer">
+    </div>
+  </div>  
+
+</main>

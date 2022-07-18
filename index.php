@@ -16,7 +16,8 @@
 //require_once 'entityManager.php';
 include 'vues/header.html';
 include 'vues/missionsList.php';
-include 'vues/footer.html';
+include 'createMission.php';
+//include 'vues/footer.html';
 
 //$entityManager = getEntityManager();
 

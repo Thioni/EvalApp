@@ -37,7 +37,7 @@ foreach ($missions as $mission): ?>
 
     <section class="row">
 
-      <div class="col-1 vertF text-center">OPERATION</div>
+      <div class="col-1 test vertF text-center">OPERATION</div>
       <div class="col-1 vertC text-center"><?= $mission->getTitle()."<br>"; ?></div>
       <div class="col-1 orangF text-center">DESCRIPTION</div>
       <div class="col-9 orangC"><?= $mission->getDescription()."<br>"; ?>
