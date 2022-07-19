@@ -30,11 +30,11 @@
   require 'Controller/SpecialityManager.php';
   $managerSpeciality = new SpecialityManager();
   $specialities = $managerSpeciality->getAll();
-
-foreach ($missions as $mission): ?>
+  
+  foreach ($missions as $mission): ?>
 
   <div class="container-fluid">
-
+  
     <section class="row">
 
       <div class="col-1 test vertF text-center">OPERATION</div>

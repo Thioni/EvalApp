@@ -2,38 +2,77 @@
 
   if ($_POST) {
     $title = $_POST["title"];
-    $codename = $_POST["code"];
-    $idSpeciality = $_POST["speciality"];
+    $codename = $_POST["codename"];
+    //$mission_type = $_POST["mission_type"];
+    //$mission_status = $_POST["mission_status"];
+    $speciality = $_POST["speciality"];
     $description = $_POST["description"];
-    $date_start = $_POST["début"];
-    $date_end = $_POST["fin"];
-    $idCountry = $_POST["country"];
-    $idAgent1 = $_POST["agent1"];
-    $idAgent2 = $_POST["agent2"];
-    $idAgent3 = $_POST["agent3"];
-    $idTarget1 = $_POST["target1"];
-    $idTarget2 = $_POST["target2"];
-    $idTarget3 = $_POST["target3"];
-    $idContact1 = $_POST["contact1"];
-    $idContact2 = $_POST["contact2"];
-    $idContact3 = $_POST["contact3"];
-    $idHideout1 = $_POST["hideout1"];
-    $idHideout2 = $_POST["hideout2"];
-    $idHideout3 = $_POST["hideout3"];
-  }
+    $date_start = $_POST["date_start"];
+    $date_end = $_POST["date_end"];
+    $country = $_POST["country"];
+    $agent_one = $_POST["agent_one"];
+    $agent_two = $_POST["agent_two"] === "null" ? NULL : $_POST["agent_two"]; 
+    $agent_three = $_POST["agent_three"] === "null" ? NULL : $_POST["agent_three"];
+    $target_one = $_POST["target_one"];
+    $target_two = $_POST["target_three"] === "null" ? NULL : $_POST["target_two"];
+    $target_three = $_POST["target_three"] === "null" ? NULL : $_POST["target_three"];
+    $contact_one = $_POST["contact_one"];
+    $contact_two = $_POST["contact_two"] === "null" ? NULL : $_POST["contact_two"];
+    $contact_three = $_POST["contact_three"] === "null" ? NULL : $_POST["contact_three"];
+    $hideout_one = $_POST["hideout_one"];
+    $hideout_two = $_POST["hideout_two"] === "null" ? NULL : $_POST["hideout_two"];
+    $hideout_three = $_POST["hideout_three"] === "null" ? NULL : $_POST["hideout_three"];
+    var_dump($_POST);
+
+    $newMission = new Mission([
+      "title" => $title,
+      "codename" => $codename,
+      //"mission_type" => $mission_type,
+      //"mission_status" => $mission_status,
+      "speciality" => $speciality,
+      "description" => $description,
+      "date-start" => $date_start,
+      "date_end" => $date_end,
+      "country" => $country,
+      "agent_one" => $agent_one,
+      "agent_two" => $agent_two,
+      "agent_three" => $agent_three,
+      "target_one" => $target_one,
+      "target_three" => $target_two,
+      "target_three" => $target_three,
+      "contact_one" => $contact_one,
+      "contact_two" => $contact_two,
+      "contact_three" => $contact_three,
+      "hideout_one" => $hideout_one,
+      "hideout_two" => $hideout_two,
+      "hideout_three" => $hideout_three,
+    ]);
+    $managerMission->create($newMission);
+
+
+       // $missionManager->create([$title, $codename, $idSpeciality, $description, $date_start, $date_end, $idCountry, $idAgent1, $idAgent2, $idAgent3, $idTarget1, $idTarget2, $idTarget3, $idContact1, $idContact2, $idContact3, $idHideout1, $idHideout2, $idHideout3]);
+
+  };
+
+  /*  le if $_POST
+    les premières variables sont créées pour l'occasion (et servent d'index?)
+    la variable $_POST contient automatiquement ....(voir live 4 pokedex)
+    la colone spécifiée pour $_POST correspond au  champ name ? /au champ id ? de nos input/select
+  */
 
 ?>
 
 <main class="container-fluid">
 
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
 
     <div class="row m-0">
+
         <label for="title" class="form-label col-3 col-md-1 bleuF">Titre</label>
         <input type="text" name="title" placeholder="Titre de la mission" id="title" class="col-8 col-md-2" minlength="10" maxlength="30">
 
-        <label for="code" class="form-label col-3 col-md-1 bleuF">Nom de code</label>
-        <input class ="col-8 col-md-2" type="text" name="code" placeholder="Code" id="code" minlength="5" maxlength="20">
+        <label for="codename" class="form-label col-3 col-md-1 bleuF">Code</label>
+        <input class ="col-8 col-md-2" type="text" name="codename" placeholder="Code" id="codename" minlength="1" maxlength="20">
 
         <label for="speciality" class="form-label col-3 col-md-1 bleuF">Spécialité</label>
         <div class="col-6 col-md-2">
@@ -43,37 +82,42 @@
           <?php endforeach ?>
         </select>
         </div>
+
+        <!-- la boucle foreach
+          *boucle foreach classqiue: la première variable sera le nom du tableau, la seconde sera l'index
+          *le champ value sera le champ pris en compte pour l'identifier tandis que celui utilisé dans option sera celui visible de l'utilisateur
+            qui nous permettra de choisir avec un nom plutot qu'un id
+        -->
+
+    </div>
+
+    <div class="row m-0">
+
+        <label for="mission_type" class="form-label col-3 col-md-1 bleuF">Type de mission</label>
+        <input type="text" name="mission_type" placeholder="Type de mission" id="mission_type" class="col-8 col-md-2" minlength="10" maxlength="30">
+
+        <label for="mission_status" class="form-label col-3 col-md-1 bleuF">Status de la mission</label>
+        <input class ="col-8 col-md-2" type="text" name="mission_status" placeholder="Status de la mission" id="mission_status" minlength="5" maxlength="20">
+
     </div>
 
     <div  class="row m-0 mt-2">
-      <label for="description" class="form-label col-3 col-md-1 bleuF ">Description</label>
-      <textarea name="description" id="description" class="col-6" rows="2" placeholder="Déscription de la mission" minlength="10" maxlength="150"></textarea>
+
+      <label for="description" class="form-label col-3 col-md-1 bleuF">Description</label>
+      <textarea name="description" id="description" class="col-6" rows="2" placeholder="Déscriptif de la mission" minlength="10" maxlength="190"></textarea>
+
     </div>
 
     <div class="row m-0 mt-2">
-      
-    <!-- inutile pour le "create", à conserver pour le "update"
-
-    <div class="col-2">
-      <label for="status">Status mission</label>
-      <select name="status" id="status" class="form-select">
-        <option selected>En préparation</option>
-        <option selected>En cours</option>
-        <option selected>Terminée</option>
-      </select>
-    </div>
-
-    ------------------------------------------------------ -->
-
 
       <div class="col-8 col-md-1">
-        <label for="début" class="bleuF">Date de début</label>
-        <input type="date" id="début" name="début">
+        <label for="date_start" class="bleuF">Date de date-start</label>
+        <input type="date" id="date_start" name="date_start">
       </div>  
 
       <div class="col-8 col-md-1">
-        <label for="fin" class="bleuF">Date de fin</label>
-        <input type="date" id="fin" name="fin">
+        <label for="date_end" class="bleuF">Date de date_end</label>
+        <input type="date" id="date_end" name="date_end">
       </div>
             
       <div class="col-8 col-md-2 mt-1 mt-sm-0">
@@ -85,28 +129,26 @@
         </select>
       </div>
 
-
-
     </div>
 
     <div class="row m-0 mt-2">
 
       <div class="col-8 col-md-2">
           <label for="agent" class="bleuF">Agent(s)</label>
-          <select name="agent1" id="agent1" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="agent_one" id="agent_one" class="form-select">
+            <option value="" selected>---</option>
             <?php foreach ($agents as $agent): ?>
               <option value="<?= $agent->getId()?>"><?= $agent->getFirst_name()." ".$agent->getLast_name(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="agent2" id="agent2" class="form-select">
-          <option value="<?= NULL ?>" selected>---</option>
+          <select name="agent_two" id="agent_two" class="form-select">
+          <option value="null" selected>---</option>
             <?php foreach ($agents as $agent): ?>
               <option value="<?= $agent->getId()?>"><?= $agent->getFirst_name()." ".$agent->getLast_name(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="agent3" id="agent3" class="form-select">
-          <option value="<?= NULL ?>" selected>---</option>
+          <select name="agent_three" id="agent_three" class="form-select">
+          <option value="null" selected>---</option>
             <?php foreach ($agents as $agent): ?>
               <option value="<?= $agent->getId()?>"><?= $agent->getFirst_name()." ".$agent->getLast_name(); ?></option>
             <?php endforeach ?>
@@ -115,20 +157,20 @@
             
       <div class="col-8 col-md-2">
           <label for="target" class="bleuF">Cible(s)</label>
-          <select name="target1" id="target1" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="target_one" id="target_one" class="form-select">
+            <option value="" selected>---</option>
             <?php foreach ($targets as $target): ?>
               <option value="<?= $target->getId()?>"><?= $target->getFirst_name()." ".$target->getLast_name(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="target2" id="target2" class="form-select">
-          <option value="<?= NULL ?>" selected>---</option>
+          <select name="target_two" id="target_two" class="form-select">
+          <option value="null" selected>---</option>
             <?php foreach ($targets as $target): ?>
               <option value="<?= $target->getId()?>"><?= $target->getFirst_name()." ".$target->getLast_name(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="target3" id="target3" class="form-select">
-          <option value="<?= NULL ?>" selected>---</option>
+          <select name="target_three" id="target_three" class="form-select">
+          <option value="null" selected>---</option>
             <?php foreach ($targets as $target): ?>
               <option value="<?= $target->getId()?>"><?= $target->getFirst_name()." ".$target->getLast_name(); ?></option>
             <?php endforeach ?>
@@ -137,20 +179,20 @@
             
       <div class="col-8 col-md-2">
           <label for="contact" class="bleuF">Contact(s)</label>
-          <select name="contact1" id="contact1" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="contact_one" id="contact_one" class="form-select">
+            <option value="" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId()?>"><?= $contact->getFirst_name()." ".$contact->getLast_name(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="contact2" id="contact2" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="contact_two" id="contact_two" class="form-select">
+            <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId()?>"><?= $contact->getFirst_name()." ".$contact->getLast_name(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="contact3" id="contact3" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="contact_three" id="contact_three" class="form-select">
+            <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId()?>"><?= $contact->getFirst_name()." ".$contact->getLast_name(); ?></option>
             <?php endforeach ?>
@@ -159,35 +201,37 @@
             
       <div class="col-8 col-md-2">
           <label for="hideout" class="bleuF">Planque(s)</label>
-          <select name="hideout1" id="hideout1" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="hideout_one" id="hideout_one" class="form-select">
+            <option value="" selected>---</option>
             <?php foreach ($hideouts as $hideout): ?>
               <option value="<?= $hideout->getId()?>"><?= $hideout->getAdress(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="hideout2" id="hideout2" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="hideout_two" id="hideout_two" class="form-select">
+            <option value="null" selected>---</option>
             <?php foreach ($hideouts as $hideout): ?>
               <option value="<?= $hideout->getId()?>"><?= $hideout->getAdress(); ?></option>
             <?php endforeach ?>
           </select>
-          <select name="hideout3" id="hideout3" class="form-select">
-            <option value="<?= NULL ?>" selected>---</option>
+          <select name="hideout_three" id="hideout_three" class="form-select">
+            <option value="null" selected>---</option>
             <?php foreach ($hideouts as $hideout): ?>
               <option value="<?= $hideout->getId()?>"><?= $hideout->getAdress(); ?></option>
             <?php endforeach ?>
           </select>
       </div>
-    
-            <!-- Bouton de confirmation --> 
-
-      <div class="row m-0 mt-4">
-        <div class="col-2">
-          <input type="submit" class="btn btn-success" value="Créer">
-        </div>
-      </div>  
 
     </div>
-    
+
+      <!-- Bouton de confirmation --> 
+
+    <div class="row m-0 mt-4">
+      
+      <div class="col-2">
+        <input type="submit" class="btn btn-success" value="Créer">
+      </div>
+      
+    </div>  
+       
   </form>
 </main>

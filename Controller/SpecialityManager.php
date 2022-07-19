@@ -20,7 +20,7 @@ class SpecialityManager {
   public function create(Speciality $speciality) {
     $request = $this->db->prepare("INSERT INTO `specialities` (skill) VALUE (:skill)");
   
-    $request->bindValue(":skill", $speciality->getLocation(), PDO::PARAM_STR);
+    $request->bindValue(":skill", $speciality->getSkill(), PDO::PARAM_STR);
   
     $request->execute();
   }
@@ -49,7 +49,7 @@ class SpecialityManager {
   {
     $req = $this->db->prepare("UPDATE `specialities` SET skill = :skill");
 
-    $request->bindValue(":skill", $mission->getLocation(), PDO::PARAM_STR);
+    $request->bindValue(":skill", $speciality->getSkill(), PDO::PARAM_STR);
 
     $req->execute();
   }

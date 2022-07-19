@@ -20,7 +20,11 @@ class AgentManager {
   public function create(Agent $agent) {
     $request = $this->db->prepare("INSERT INTO `agents` (first_name, last_name, birthdate, code_agent, nationality) VALUE (:first_name, :last_name, :birthdate, :code_agent, :nationality)");
   
-    $request->bindValue(":xxx", $agent->getXXX(), PDO::PARAM_STR);
+    $request->bindValue(":first_name", $agent->getFirst_name(), PDO::PARAM_STR);
+    $request->bindValue(":last_name", $agent->getLast_name(), PDO::PARAM_STR);
+    $request->bindValue(":birthdate", $agent->getBirthdate(), PDO::PARAM_STR);
+    $request->bindValue(":code_agent", $agent->getCode_agent(), PDO::PARAM_INT);
+    $request->bindValue(":nationality", $agent->getNationality(), PDO::PARAM_INT);
   
     $request->execute();
   }
@@ -49,7 +53,11 @@ class AgentManager {
   {
     $req = $this->db->prepare("UPDATE `agents` SET first_name = :first_name, last_name = :last_name, birthdate = :birthdate, code_agent = :code_agent, nationality = :nationality");
 
-    $request->bindValue(":xxx", $agent->getTitle(), PDO::PARAM_STR);
+    $request->bindValue(":first_name", $agent->getFirst_name(), PDO::PARAM_STR);
+    $request->bindValue(":last_name", $agent->getLast_name(), PDO::PARAM_STR);
+    $request->bindValue(":birthdate", $agent->getBirthdate(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $agent->getCode_agent(), PDO::PARAM_INT);
+    $request->bindValue(":nationality", $agent->getNationality(), PDO::PARAM_INT);
 
     $req->execute();
   }

@@ -15,15 +15,22 @@
 //require_once 'vendor/autoload.php';
 //require_once 'entityManager.php';
 include 'vues/header.html';
+?>
+
+<div>
+  <a href="createMission.php" class="btn btn-success">Créer une nouvelle mission</a>
+</div>
+<br>
+
+  <!-- bouton temporaire
+    *permet d'aller à la page createMission
+    *au final il serait plus interressant d'utiliser AJAX pour rester sur la même page et la modifier (?)
+  -->
+
+<?php
 include 'vues/missionsList.php';
+//include 'createAgent.php';
 include 'createMission.php';
 //include 'vues/footer.html';
 
 //$entityManager = getEntityManager();
-
-
-?>
-
-
-  
-</section>
