@@ -37,6 +37,11 @@ class AgentManager {
     $agent = new Agent($data);
     return $agent;
   }
+
+  public function getLastAgentId() {
+    $req = $this->db->query("SELECT * FROM `agents` ORDER BY id DESC LIMIT 1");
+    return $req->fetch()["id"];
+}
   
   public function getAll() {
     $agents = [];

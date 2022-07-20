@@ -29,8 +29,8 @@ include 'vues/header.html';
 
 <?php
 include 'vues/missionsList.php';
-//include 'createAgent.php';
-include 'createMission.php';
+include 'createAgent.php';
+//include 'createMission.php';
 //include 'vues/footer.html';
 
 //$entityManager = getEntityManager();
