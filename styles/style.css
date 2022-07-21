@@ -1,38 +1,40 @@
-/*.container {
-  height: auto;
-  width: auto;
-}*/
-
-.test {
-  font-size: 1.5rem;
+body {
+  background-color: rgba(0, 0, 0, 0.877);
 }
 
+/*.test {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10px;
+}*/
+
 #header {
-  color: #e91389;
+  background-color: #e91389;
+}
+
+.bleuC {
+  background-color: rgb(131, 135, 170) 
 }
 
 .bleuF {
-  background-color: rgb(102, 106, 153)
+  background-color: rgb(73, 80, 163)
+}
+
+.vertC {
+  background-color: rgb(96, 136, 100);
+  height: 100px;
 }
 
 .vertF {
   background-color: rgb(43, 134, 51)
 }
 
-.vertC {
-  background-color: rgba(43, 134, 51, 0.432)
+.orangC {
+  background-color: rgb(185, 141, 115)
 }
 
 .orangF {
   background-color: rgb(221, 98, 26)
-}
-
-.orangC {
-  background-color: rgba(221, 98, 26, 0.384)
-}
-
-.bleuC {
-  background-color: rgba(102, 106, 153, 0.288)
 }
 
 .titles {

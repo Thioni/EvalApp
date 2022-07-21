@@ -8,29 +8,33 @@
   <title>Spycraft</title>
   <link rel="stylesheet" href="vues/bootstrap.min.css">
   <link rel="stylesheet" href="styles/style.css">
-  <script src="bootstrap.bundle.min.js"></script> <!-- à remettre en footer? -->
 </head>
 
-<?php
-//require_once 'vendor/autoload.php';
-//require_once 'entityManager.php';
-include 'vues/header.html';
-?>
+<body>
+  <?php
+  //require_once 'vendor/autoload.php';
+  //require_once 'entityManager.php';
+  include 'vues/header.html';
+  include 'vues/missionsList.php';
+  include 'createAgent.php';
+  include 'createMission.php';
+  //include 'vues/footer.html';
 
-<div>
-  <a href="createMission.php" class="btn btn-success">Créer une nouvelle mission</a>
-</div>
-<br>
+  //$entityManager = getEntityManager();
+  ?>
 
-  <!-- bouton temporaire
-    *permet d'aller à la page createMission
-    *au final il serait plus interressant d'utiliser AJAX pour rester sur la même page et la modifier (?)
-  -->
+  <!--
+  <div>
+    <a href="createMission.php" class="btn btn-success">Créer une nouvelle mission</a>
+  </div>
+  <br>
 
-<?php
-include 'vues/missionsList.php';
-include 'createAgent.php';
-//include 'createMission.php';
-//include 'vues/footer.html';
+  bouton temporaire
+      *permet d'aller à la page createMission
+      *au final il serait plus interressant d'utiliser AJAX pour rester sur la même page et la modifier (?)
+-->
 
-//$entityManager = getEntityManager();
+<!-- <script src="bootstrap.bundle.min.js"></script>-->
+
+</body>
+</html>

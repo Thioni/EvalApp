@@ -61,22 +61,22 @@ $skill_two = NULL;
 
   <form method="post" enctype="multipart/form-data">
 
-    <div class="row m-0">
+    <div class="row m-0 justify-content-center text-center">
 
-      <label for="first_name" class="form-label col-3 col-md-1 bleuF">Prénom</label>
+      <label for="first_name" class="form-label col-3 col-md-1 bg-success">Prénom</label>
       <input type="text" name="first_name" placeholder="Prénom de l'agent" id="first_name" class="col-8 col-md-2" minlength="3" maxlength="30">
 
-      <label for="last_name" class="form-label col-3 col-md-1 bleuF">Nom</label>
+      <label for="last_name" class="form-label col-3 col-md-1 bg-success">Nom</label>
       <input class ="col-8 col-md-2" type="text" name="last_name" placeholder="Nom de famille" id="last_name" minlength="3" maxlength="30">
 
-      <label for="code_agent" class="form-label col-3 col-md-1 bleuF">Code Agent</label>
+      <label for="code_agent" class="form-label col-3 col-md-1 bg-success">Code Agent</label>
       <input class ="col-8 col-md-2" type="text" name="code_agent" placeholder="Nom de code" id="code_agent" minlength="1" maxlength="10">
 
     </div>
 
-    <div  class="row m-0 mt-2">
+    <div  class="row m-0 mt-2 justify-content-center text-center">
 
-      <label for="speciality" class="form-label col-3 col-md-1 bleuF">Spécialité 1</label>
+      <label for="speciality" class="form-label col-3 col-md-1 bg-success">Spécialité 1</label>
           <div class="col-6 col-md-2">
             <select name="skill_one" id="skill_one" class="form-select">
             <option value="" selected>---</option>
@@ -86,7 +86,7 @@ $skill_two = NULL;
             </select>
           </div>
 
-      <label for="speciality" class="form-label col-3 col-md-1 bleuF">Spécialité 2</label>
+      <label for="speciality" class="form-label col-3 col-md-1 bg-success">Spécialité 2</label>
           <div class="col-6 col-md-2">
             <select name="skill_two" id="skill_two" class="form-select">
             <option value="null" selected>---</option>
@@ -96,7 +96,7 @@ $skill_two = NULL;
             </select>
           </div>
 
-      <label for="speciality" class="form-label col-3 col-md-1 bleuF">Spécialité 3</label>
+      <label for="speciality" class="form-label col-3 col-md-1 bg-success">Spécialité 3</label>
           <div class="col-6 col-md-2">
             <select name="skill_three" id="skill_three" class="form-select">
             <option value="null" selected>---</option>
@@ -108,15 +108,15 @@ $skill_two = NULL;
 
     </div>
 
-    <div class="row m-0 mt-2">
+    <div class="row m-0 mt-2 justify-content-center text-center">
 
     <div class="col-8 col-md-1">
-        <label for="birthdate" class="bleuF">Date de naissance</label>
+        <label for="birthdate" class="bg-success">Date de naissance</label>
         <input type="date" id="birthdate" name="birthdate">
       </div>
 
       <div class="col-8 col-md-2 mt-1 mt-sm-0">
-        <label for="nationality" class="bleuF">Pays d'origine</label>
+        <label for="nationality" class="bg-success">Pays d'origine</label>
         <select name="nationality" id="nationality" class="form-select">
           <?php foreach ($countries as $country): ?>
             <option value="<?= $country->getId() ?>"><?= $country->getLocation(); ?></option>
@@ -128,10 +128,10 @@ $skill_two = NULL;
 
       <!-- Bouton de confirmation --> 
 
-    <div class="row m-0 mt-4">
+    <div class="row m-0 mt-4 justify-content-center">
       
-      <div class="col-2">
-        <input type="submit" class="btn btn-success" value="Créer">
+      <div class="col-1">
+        <input type="submit" class="btn btn-warning" value="Créer un agent">
       </div>
       
     </div>  
