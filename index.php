@@ -10,25 +10,55 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>
-  <?php
+<?php
   //require_once 'vendor/autoload.php';
   //require_once 'entityManager.php';
-  include 'vues/header.html';
-  include 'vues/missionsList.php';
-  include 'createAgent.php';
-  include 'createMission.php';
-  //include 'vues/footer.html';
+  include 'vues/header.php';
+  //include 'vues/missionsList.php';
+  //include 'createAgent.php';
+  //include 'createMission.php';
+
+  require 'Controller/MissionManager.php';
+  $managerMission = new MissionManager();
+  $missions = $managerMission->getAll();
+  
+  require 'Controller/CountryManager.php';
+  $managerCountry = new CountryManager();
+  $countries = $managerCountry->getAll();
+
+  require 'Controller/CodenameManager.php';
+  $managerCodename = new CodenameManager();
+  $codenames = $managerCodename->getAll();
+
+  require_once 'Controller/AgentManager.php';
+  $managerAgent = new AgentManager();
+  $agents = $managerAgent->getAll();
+
+  require 'Controller/TargetManager.php';
+  $managerTarget = new TargetManager();
+  $targets = $managerTarget->getAll();
+
+  require 'Controller/ContactManager.php';
+  $managerContact = new ContactManager();
+  $contacts = $managerContact->getAll();
+
+  require 'Controller/HideoutManager.php';
+  $managerHideout = new HideoutManager();
+  $hideouts = $managerHideout->getAll();
+
+  require 'Controller/SpecialityManager.php';
+  $managerSpeciality = new SpecialityManager();
+  $specialities = $managerSpeciality->getAll();
 
   //$entityManager = getEntityManager();
-  ?>
+  
+?>
 
-  <!--
-  <div>
-    <a href="createMission.php" class="btn btn-success">Créer une nouvelle mission</a>
-  </div>
-  <br>
+<body>
 
+<?php include "vues/missionsList.php"; ?>
+
+<!--
   bouton temporaire
       *permet d'aller à la page createMission
       *au final il serait plus interressant d'utiliser AJAX pour rester sur la même page et la modifier (?)
@@ -37,4 +67,5 @@
 <!-- <script src="bootstrap.bundle.min.js"></script>-->
 
 </body>
+<?php include 'vues/footer.html'; ?>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Country.php");
+require __DIR__ . '/../Model/Country.php';
 
 class CountryManager {
   private $db;

@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Codename.php");
+require __DIR__ . '/../Model/Codename.php';
 
 class CodenameManager {
   private $db;

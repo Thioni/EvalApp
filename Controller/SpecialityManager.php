@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Speciality.php");
+require __DIR__ . '/../Model/Speciality.php';
 
 class SpecialityManager {
   private $db;

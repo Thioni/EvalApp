@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Agent.php");
+require __DIR__ . '/../Model/Agent.php';
 
 class AgentManager {
   private $db;

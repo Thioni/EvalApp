@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Mission.php");
+require __DIR__ . '/../Model/Mission.php';
 
 class MissionManager {
   private $db;

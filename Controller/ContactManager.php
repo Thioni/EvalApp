@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Contact.php");
+require __DIR__ . '/../Model/Contact.php';
 
 class ContactManager {
   private $db;

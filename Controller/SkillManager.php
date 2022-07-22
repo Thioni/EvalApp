@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Skill.php");
+require __DIR__ . '/../Model/Skill.php';
 
 class SkillManager {
   private $db;

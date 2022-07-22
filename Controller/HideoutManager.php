@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Hideout.php");
+require __DIR__ . '/../Model/Hideout.php';
 
 class HideoutManager {
   private $db;

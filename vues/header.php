@@ -1,22 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spycraft, site d'espionnage depuis 1889 (oui, avant le web)">
+  <title>Spycraft</title>
+  <style>
+  <?php include __DIR__ . "/../vues/bootstrap.min.css" ?>
+  <?php include __DIR__ . "/../vues/style.css" ?>
+  </style>
+
+</head>
+
 <div class="container-fluid">
   <header>
     <div class="header row align-items-center">
       <div class="col-3 text-center bleuF">
           <img class="logo" src="" alt="Logo spycraft" width="50" height="50">
       </div>
-      <div class="col-6 text-center bleuF" id="header"><h1>SPYCRAFT</h1></div>        
-      <div class="col-3 text-center" id="menu">          
-        <div class="dropdown">
-          <a class="btn btn-danger dropdown-toggle" href="#" role="button" id="dropdownMenuLink" 
-          data-bs-toggle="dropdown" aria-expanded="false">
-          Menu
-        </a>        
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#">1</a></li>
-          <li><a class="dropdown-item" href="#">2</a></li>
-        </ul>
-        </div>
-      </div>        
+      <div class="col-6 text-center bleuF" id="header"><h1>SPYCRAFT</h1></div>
     </div>
   </header>
 </div>
@@ -26,22 +29,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+          <a class="nav-link active" aria-current="page" href="">Missions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="events.html">Missions</a>
+          <a class="nav-link" href="">Agents</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Agents</a>
+          <a class="nav-link" href="">Contacts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contacts</a>
+          <a class="nav-link" href="">Hideouts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Hideouts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Specialties</a>
+          <a class="nav-link" href="">Specialties</a>
         </li>
       </ul>
       <form class="d-flex">

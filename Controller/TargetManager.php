@@ -1,6 +1,6 @@
 <?php
 
-require("Model/Target.php");
+require __DIR__ . '/../Model/Target.php';
 
 class TargetManager {
   private $db;
