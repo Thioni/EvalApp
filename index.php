@@ -7,7 +7,7 @@
   <meta name="description" content="Spycraft, site d'espionnage depuis 1889 (oui, avant le web)">
   <title>Spycraft</title>
   <link rel="stylesheet" href="vues/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/style.css">
+  <!--<link rel="stylesheet" href="styles/style.css">-->
 </head>
 
 <?php
@@ -54,7 +54,7 @@
   
 ?>
 
-<body>
+<body class="bg-dark">
 
 <?php include "vues/missionsList.php"; ?>
 

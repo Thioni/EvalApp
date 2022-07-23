@@ -1,3 +1,15 @@
+<section class="row">
+  <div class="col-1">
+    <a href="" class="btn btn-success mb-3">Retour</a>
+  </div>
+  <div class="col-1">
+    <a href="./Controller/createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
+  </div>
+  <div class="col-1">
+    <a href="createTarfget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+  </div>
+</section>
+
 <?php foreach ($missions as $mission): ?>
 
 <div class="container-fluid">

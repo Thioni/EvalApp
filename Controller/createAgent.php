@@ -1,6 +1,24 @@
+<body class="bg-dark">
+
 <?php
 
 include '../vues/header.php';
+
+?>
+
+<section class="row">
+  <div class="col-1">
+    <a href="../index.php" class="btn btn-success mb-3">Retour</a>
+  </div>
+  <div class="col-1">
+    <a href="createMission.php" class="btn btn-warning mb-3">Nouvelle mission</a>
+  </div>
+  <div class="col-1">
+    <a href="createTarfget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+  </div>
+</section>
+
+<?php
 
 require './AgentManager.php';
 $managerAgent = new AgentManager();
@@ -17,7 +35,6 @@ $countries = $managerCountry->getAll();
 require './SkillManager.php';
 $managerSkill = new SkillManager();
 $skills = $managerSkill->getAll();
-$skill_two = NULL;
 
   if ($_POST) {
     $first_name = $_POST["first_name"];
@@ -152,3 +169,5 @@ $skill_two = NULL;
        
   </form>
 </main>
+
+</body>

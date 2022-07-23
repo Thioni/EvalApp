@@ -8,7 +8,7 @@
   <title>Spycraft</title>
   <style>
   <?php include __DIR__ . "/../vues/bootstrap.min.css" ?>
-  <?php include __DIR__ . "/../vues/style.css" ?>
+  <?php //include __DIR__ . "/../vues/style.css" ?>
   </style>
 
 </head>

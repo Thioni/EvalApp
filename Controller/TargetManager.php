@@ -20,11 +20,11 @@ class TargetManager {
   public function create(Target $target) {
     $request = $this->db->prepare("INSERT INTO `targets` (first_name, last_name, birthdate, codename, nationality) VALUE (:first_name, :last_name, :birthdate, :codename, :nationality)");
   
-    $request->bindValue(":first_name", $mission->getTitle(), PDO::PARAM_STR);
-    $request->bindValue(":last_name", $mission->getDescription(), PDO::PARAM_STR);
-    $request->bindValue(":birthdate", $mission->getMission_type(), PDO::PARAM_STR);
-    $request->bindValue(":codename", $mission->getMission_status(), PDO::PARAM_STR);
-    $request->bindValue(":nationality", $mission->getDAte_start(), PDO::PARAM_STR);
+    $request->bindValue(":first_name", $target->getFirst_name(), PDO::PARAM_STR);
+    $request->bindValue(":last_name", $target->getLast_name(), PDO::PARAM_STR);
+    $request->bindValue(":birthdate", $target->getBirthdate(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $target->getCodename(), PDO::PARAM_INT);
+    $request->bindValue(":nationality", $target->getNationality(), PDO::PARAM_INT);
   
     $request->execute();
   }
@@ -53,11 +53,11 @@ class TargetManager {
   {
     $req = $this->db->prepare("UPDATE `targets` SET first_name = :first_name, last_name = :last_name, birthdate = :birthdate, codename = :codename, nationality = :nationality");
 
-    $request->bindValue(":first_name", $mission->getTitle(), PDO::PARAM_STR);
-    $request->bindValue(":last_name", $mission->getDescription(), PDO::PARAM_STR);
-    $request->bindValue(":birthdate", $mission->getMission_type(), PDO::PARAM_STR);
-    $request->bindValue(":codename", $mission->getMission_status(), PDO::PARAM_STR);
-    $request->bindValue(":nationality", $mission->getDAte_start(), PDO::PARAM_STR);
+    $request->bindValue(":first_name", $target->getFirst_name(), PDO::PARAM_STR);
+    $request->bindValue(":last_name", $target->getLast_name(), PDO::PARAM_STR);
+    $request->bindValue(":birthdate", $target->getBirthdate(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $target->getCodename(), PDO::PARAM_INT);
+    $request->bindValue(":nationality", $target->getNationality(), PDO::PARAM_INT);
 
     $req->execute();
   }
