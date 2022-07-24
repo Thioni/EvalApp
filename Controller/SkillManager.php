@@ -35,7 +35,26 @@ class SkillManager {
     $skill = new Skill($data);
     return $skill;
   }
-  
+
+  //TEST
+
+  public function getJunk(int $idA) {
+    /*if ($input instanceof Type) {
+        # code...
+    }*/
+    $skillz = [];
+    $req = $this->db->prepare("SELECT `agents_id`, `specialities_id`, first_name, last_name FROM `agents_skills` 
+    JOIN agents ON agents_id = agents.id JOIN specialities ON specialities_id = specialities.id WHERE agents.id LIKE :agents.id'");
+    $req->bindValue(":agents.id", $agentsID, PDO::PARAM_INT);
+    $datas = $req->fetchAll();
+    foreach ($datas as $data) {
+        $skill = new Skill($data);
+        $skills[] = $skill;
+    }
+    return $skills;
+}
+  // END OF TEST
+
   public function getAll() {
     $agents_skills = [];
     $request = $this->db->query("SELECT * FROM `agents_skills`");

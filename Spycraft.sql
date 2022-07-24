@@ -345,6 +345,6 @@ VALUES ('Kari', 'Torbeck', 'ktorbeck4@time.com', '$2y$10$KQpDHqF6U5b.WkBl9TrOtOc
 
 ----------------------------------------- TESTS SQL ------------------------------------------------
 
-SELECT agents.first_name, specialities.skill FROM specialities 
-JOIN agents_skills ON specialities.id = agents_skills.specialities_id 
-JOIN agents ON agents_skills.agents_id = agents.id;
+SELECT agents.first_name, agents.last_name, specialities.skill FROM agents
+JOIN agents_skills ON agents.id = agents_skills.agents_id
+JOIN specialities ON agents_skills.specialities_id = specialities.id;

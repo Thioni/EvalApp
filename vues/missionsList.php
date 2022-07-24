@@ -95,9 +95,9 @@
 
     <div class="col-2 bg-light text-center">
       <?php foreach ($hideouts as $hideout):
-        echo $mission->getContact_one() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
-        echo $mission->getContact_two() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
-        echo $mission->getContact_three() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
+        echo $mission->getHideout_one() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
+        echo $mission->getHideout_two() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
+        echo $mission->getHideout_three() === $hideout->getId() ? $hideout->getAdress()."<br>" : "";
       endforeach; ?>
     </div>
 
