@@ -13,6 +13,9 @@ include '../vues/header.php';
   <div class="col-1">
     <a href="createMission.php" class="btn btn-warning mb-3">Nouvelle mission</a>
   </div>
+  <div class="col-1">
+    <a href="createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
+  </div>  
 </section>
 
 <?php

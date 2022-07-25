@@ -50,11 +50,8 @@
   require 'Controller/SpecialityManager.php';
   $managerSpeciality = new SpecialityManager();
   $specialities = $managerSpeciality->getAll();
-
-  //$entityManager = getEntityManager();
-
   
-  
+  require './Controller/GetSkills.php';
 ?>
 
 <section class="row">
@@ -65,7 +62,10 @@
     <a href="./Controller/createMission.php" class="btn btn-warning mb-3">Nouvelle mission</a>
   </div>
   <div class="col-1">
-    <a href="createTarfget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+    <a href="./Controller/createTarget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+  </div>
+  <div class="col-1">
+    <a href="./Controller/createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
   </div>
 </section>
 
@@ -113,25 +113,9 @@
 
     <div class="col-2 bg-light text-center">      
 
-      <?php foreach ($agents_skills as $skill) :
-        //
-      endforeach; ?>
-      <?php foreach ($specialities as $speciality) :
-        //
-      endforeach; ?>
-        
       <?php
-
-        $idA = $agent->getId();
-
-        $junction = new PDO('mysql:host=localhost;dbname=spycraft', 'root', '');
-        foreach ($junction->query('SELECT agents_id, specialities_id, first_name, last_name, skill 
-          FROM agents_skills
-          JOIN agents ON agents_id = agents.id 
-          JOIN specialities ON specialities_id = specialities.id 
-          WHERE agents_id LIKE \''.$idA.'\'', PDO::FETCH_ASSOC) as $test) {
-              echo $test['skill'].'<br>';
-              };
+        $idAgents = $agent->getId();
+        getSkills($idAgents);
       ?>          
 
     </div>

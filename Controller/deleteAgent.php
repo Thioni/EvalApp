@@ -5,7 +5,7 @@ require './AgentManager.php';
 $managerAgent = new AgentManager();
 $managerAgent->delete($_GET["id"]);
 
-header("Location: ../index.php");
+header("Location: ../agentsList.php");
 
 ?>
 

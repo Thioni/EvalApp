@@ -1,18 +1,28 @@
-<section class="row">
+<section class="row bg-secondary">
   <div class="col-1">
     <a href="" class="btn btn-success mb-3">Retour</a>
   </div>
   <div class="col-1">
-    <a href="./Controller/createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
+    <a href="./agentsList.php" class="btn btn-primary mb-3">AGENTS</a>
   </div>
   <div class="col-1">
-    <a href="createTarfget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+    <a href="" class="btn btn-primary mb-3">CIBLES</a>
   </div>
 </section>
 
+<section class="row bg-secondary">
+  <div class="col-1 offset-1">
+    <a href="./Controller/createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
+  </div>
+  <div class="col-1">
+    <a href="./Controller/createTarget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+  </div>
+</section>
+
+
 <?php foreach ($missions as $mission): ?>
 
-<div class="container-fluid">
+<div class="container-fluid mt-2">
 
   <section class="row">
 

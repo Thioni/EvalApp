@@ -29,8 +29,8 @@ CREATE TABLE agents_skills (
   agents_id INT(11) NOT NULL,
   specialities_id INT(11) NOT NULL,
   PRIMARY KEY (agents_id, specialities_id),
-  FOREIGN KEY (agents_id) REFERENCES agents(id),
-  FOREIGN KEY (specialities_id) REFERENCES specialities(id)
+  FOREIGN KEY (agents_id) REFERENCES agents(id) ON DELETE CASCADE,
+  FOREIGN KEY (specialities_id) REFERENCES specialities(id) ON DELETE CASCADE
 ) engine=InnoDB;
 
 CREATE TABLE targets (

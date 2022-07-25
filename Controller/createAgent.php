@@ -14,7 +14,7 @@ include '../vues/header.php';
     <a href="createMission.php" class="btn btn-warning mb-3">Nouvelle mission</a>
   </div>
   <div class="col-1">
-    <a href="createTarfget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
+    <a href="createTarget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
   </div>
 </section>
 
@@ -162,7 +162,7 @@ $skills = $managerSkill->getAll();
     <div class="row m-0 mt-4 justify-content-center">
       
       <div class="col-1">
-        <input type="submit" class="btn btn-warning" value="Créer un agent">
+        <input type="submit" class="btn btn-warning" value="Créer l'agent">
       </div>
       
     </div>  
