@@ -44,14 +44,13 @@
   $contacts = $managerContact->getAll();
 
   require 'Controller/SkillManager.php';
-  $manageragents_skills = new SkillManager();
-  $agents_skills = $manageragents_skills->getAll();
+  $managerSkill = new SkillManager();
+  $agents_skills = $managerSkill->getAll();
 
   require 'Controller/SpecialityManager.php';
   $managerSpeciality = new SpecialityManager();
   $specialities = $managerSpeciality->getAll();
   
-  require './Controller/GetSkills.php';
 ?>
 
 <section class="row">
@@ -112,11 +111,13 @@
     </div >
 
     <div class="col-2 bg-light text-center">      
-
+     
       <?php
+      
         $idAgents = $agent->getId();
-        getSkills($idAgents);
-      ?>          
+        $managerSkill->getSkills($idAgents);
+
+      ?>
 
     </div>
 
