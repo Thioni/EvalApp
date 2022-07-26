@@ -51,21 +51,15 @@
   $specialities = $managerSpeciality->getAll();
 
   //$entityManager = getEntityManager();
+
+  $admin = false;
   
 ?>
 
-<body class="bg-dark">
+<body class="bg-secondary">
 
 <?php include "vues/missionsList.php"; ?>
 
-<!--
-  bouton temporaire
-      *permet d'aller à la page createMission
-      *au final il serait plus interressant d'utiliser AJAX pour rester sur la même page et la modifier (?)
--->
-
-<!-- <script src="bootstrap.bundle.min.js"></script>-->
-
 </body>
-<?php include 'vues/footer.html'; ?>
+<?php include 'vues/footer.php'; ?>
 </html>

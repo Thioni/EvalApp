@@ -5,7 +5,7 @@
 include '../vues/header.php';
 
 ?>
-
+<!--
 <section class="row">
   <div class="col-1">
     <a href="../index.php" class="btn btn-success mb-3">Retour</a>
@@ -17,6 +17,7 @@ include '../vues/header.php';
     <a href="createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
   </div>  
 </section>
+-->
 
 <?php
 
@@ -102,3 +103,5 @@ $codenames = $managerCodename->getAll();
 </main>
 
 </body>
+
+<?php include '../vues/footer.php';

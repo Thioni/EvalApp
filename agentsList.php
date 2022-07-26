@@ -10,7 +10,7 @@
   <!--<link rel="stylesheet" href="styles/style.css">-->
 </head>
 
-<body class="bg-dark">
+<body class="bg-secondary">
 <?php
   //require_once 'vendor/autoload.php';
   //require_once 'entityManager.php';
@@ -52,21 +52,6 @@
   $specialities = $managerSpeciality->getAll();
   
 ?>
-
-<section class="row">
-  <div class="col-1">
-    <a href="" class="btn btn-success mb-3">Retour</a>
-  </div>
-  <div class="col-1">
-    <a href="./Controller/createMission.php" class="btn btn-warning mb-3">Nouvelle mission</a>
-  </div>
-  <div class="col-1">
-    <a href="./Controller/createTarget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
-  </div>
-  <div class="col-1">
-    <a href="./Controller/createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
-  </div>
-</section>
 
 <?php foreach ($agents as $agent): ?>
 
@@ -135,8 +120,6 @@
 
 <?php endforeach; ?>
 
-<div>
-<a href="Controller/createMission.php" class="btn btn-success mb-3">Créer une nouvelle Mission</a>
-</div>
-
 </body>
+
+<?php include './vues/footer.php';

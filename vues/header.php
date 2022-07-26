@@ -8,7 +8,10 @@
   <title>Spycraft</title>
   <style>
   <?php include __DIR__ . "/../vues/bootstrap.min.css" ?>
-  <?php //include __DIR__ . "/../vues/style.css" ?>
+  <?php //include __DIR__ . "/../vues/style.css"
+    define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
+  ?>
+
   </style>
 
 </head>
@@ -24,24 +27,54 @@
   </header>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block mb-5">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="">Missions</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Missions
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./index.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createMission.php">Créer</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Agents</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Agents
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./agentsList.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createAgent.php">Créer</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Contacts</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cibles
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/listTargets.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createTarget.php">Créer</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Hideouts</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contacts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/listContacts.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createContact.php">Créer</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Specialties</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Planques
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/listHideouts.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createHideout.php">Créer</a></li>
+          </ul>
         </li>
       </ul>
       <form class="d-flex">

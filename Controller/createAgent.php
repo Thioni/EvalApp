@@ -5,7 +5,7 @@
 include '../vues/header.php';
 
 ?>
-
+<!--
 <section class="row">
   <div class="col-1">
     <a href="../index.php" class="btn btn-success mb-3">Retour</a>
@@ -17,7 +17,7 @@ include '../vues/header.php';
     <a href="createTarget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
   </div>
 </section>
-
+-->
 <?php
 
 require './AgentManager.php';
