@@ -109,6 +109,7 @@ CREATE TABLE administrators (
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   mail VARCHAR(50) NOT NULL UNIQUE,
+  login VARCHAR(20) NOT NULL UNIQUE,
   password CHAR(60) NOT NULL,
   date_creation DATE NOT NULL
 ) engine=InnoDB;
@@ -332,16 +333,8 @@ VALUES ('titre2', 'description2', 'type2', 'en cours', '2021-06-19', '2021-08-30
 --INSERT INTO missions (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality)
 --VALUES ('titre3', 'description3', 'type3', 'en cours', '2021-03-13', '2022-02-08', 24, 3, à remplir);
 
-INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Iggie', 'Glave', 'iglave0@hao123.com', '$2y$10$L8TNQSF5Fc6pgN5e63392usenO5kEzplpzwA7ATIP1JTWpXnuUiQy', '2020-06-23');
-INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Teodorico', 'Barbe', 'tbarbe1@nationalgeographic.com', '$2y$10$vfhn0mRZHTiIKkYY0.wrpOF5LxTdOtldIbG8LRwgQrIbenrhPoKvi', '2019-09-14');
-INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Tina', 'Gawthorp', 'tgawthorp2@taobao.com', '$2y$10$Vu6R505iDYUUiBmNMe9rs.48bGwF7yaWpegS9UHSzAYBHtyCF5lmC', '2016-05-22');
-INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Maddie', 'Kivits', 'mkivits3@google.ca', '$2y$10$QkLkw9IAZ1xsYqEU77DpDeFUS2rlJ0bPgGIW0MgSOAHOHaL8QF8nq', '2016-01-23');
-INSERT INTO administrators (first_name, last_name, mail, password, date_creation)
-VALUES ('Kari', 'Torbeck', 'ktorbeck4@time.com', '$2y$10$KQpDHqF6U5b.WkBl9TrOtOcwkE2bniWm23Bf15j5hrUQ9xH.dIinu', '2019-03-25');
+INSERT INTO administrators (first_name, last_name, mail, login, password, date_creation)
+VALUES ('Iggie', 'Glave', 'iglave0@hao123.com', 'goldfinger', '$2y$10$VNLw8DHHXgYa94uFlbe2deUysfayUl2z6vfk19kE.eoSOphkjnCXO', '2020-06-23');
 
 ----------------------------------------- TESTS SQL ------------------------------------------------
 

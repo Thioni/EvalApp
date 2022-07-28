@@ -4,8 +4,10 @@ class Administrator {
   private $id;
   private $first_name;
   private $last_name;
-  private $creation_date;
+  private $mail;
+  private $login;
   private $password;
+  private $creation_date;
   private array $roles = [];
 
   public function __construct(array $data) {
@@ -53,26 +55,27 @@ class Administrator {
 //      $this->last_name = $last_name;
 //      return $this;
 //  }
-//
+
+public function getPassword()
+{
+    return $this->password;
+}
+
+public function setPassword($password)
+{
+    $this->password = $password;
+    return $this;
+}
+
 //  public function getCreation_date()
 //  {
-//      return $this->creation_date;
-//  }
-//
-//  public function setCreation_date($creation_date)
-//  {
-//      $this->creation_date = $creation_date;
-//      return $this;
-//  }
-
-  public function getPassword()
-  {
-      return $this->password;
-  }
-  
-  public function setPassword($password)
-  {
-      $this->password = $password;
-      return $this;
-  }
+  //      return $this->creation_date;
+  //  }
+  //
+  //  public function setCreation_date($creation_date)
+  //  {
+    //      $this->creation_date = $creation_date;
+    //      return $this;
+    //  }
+    
 }

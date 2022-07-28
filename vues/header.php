@@ -1,3 +1,8 @@
+<?php 
+//session_start();
+define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,12 +13,8 @@
   <title>Spycraft</title>
   <style>
   <?php include __DIR__ . "/../vues/bootstrap.min.css" ?>
-  <?php //include __DIR__ . "/../vues/style.css"
-    define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
-  ?>
-
+  <?php //include __DIR__ . "/../vues/style.css" ?>
   </style>
-
 </head>
 
 <div class="container-fluid">
@@ -77,11 +78,13 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input type="text" id="username" class="form-control" placeholder="Utilisateur">
-        <input type="text" id="password" class="form-control" placeholder="Mot de passe">
-        <button type="button" class="btn btn-secondary">Connexion</button>
-      </form>
+      <a href="<?= HTTP_ROOT ?>./connectage.php" class="btn btn-success">Connexion</a>
+
+<!--      <form method="post" class="d-flex">
+        <input type="text" name="login" id="username" class="form-control" placeholder="Utilisateur">
+        <input type="text" name="password" id="password" class="form-control" placeholder="Mot de passe">
+        <button type="submit" class="btn btn-secondary">Connexion</button>
+      </form>-->
     </div>
   </div>
 </nav>
