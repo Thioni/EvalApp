@@ -1,6 +1,42 @@
 <?php 
 session_start();
 define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
+
+require __DIR__ . '/../Controller/MissionManager.php';
+$managerMission = new MissionManager();
+$missions = $managerMission->getAll();
+  
+require __DIR__ . '/../Controller/CountryManager.php';
+$managerCountry = new CountryManager();
+$countries = $managerCountry->getAll();
+
+require __DIR__ . '/../Controller/CodenameManager.php';
+$managerCodename = new CodenameManager();
+$codenames = $managerCodename->getAll();
+
+require __DIR__ . '/../Controller/AgentManager.php';
+$managerAgent = new AgentManager();
+$agents = $managerAgent->getAll();
+
+require __DIR__ . '/../Controller/TargetManager.php';
+$managerTarget = new TargetManager();
+$targets = $managerTarget->getAll();
+
+require __DIR__ . '/../Controller/ContactManager.php';
+$managerContact = new ContactManager();
+$contacts = $managerContact->getAll();
+
+require __DIR__ . '/../Controller/HideoutManager.php';
+$managerHideout = new HideoutManager();
+$hideouts = $managerHideout->getAll();
+
+require __DIR__ . '/../Controller/SkillManager.php';
+$managerSkill = new SkillManager();
+$agents_skills = $managerSkill->getAll();
+
+require __DIR__ . '/../Controller/SpecialityManager.php';
+$managerSpeciality = new SpecialityManager();
+$specialities = $managerSpeciality->getAll();  
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +48,7 @@ define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
   <meta name="description" content="Spycraft, site d'espionnage depuis 1889 (oui, avant le web)">
   <title>Spycraft</title>
   <style>
-  <?php include __DIR__ . "/../vues/bootstrap.min.css" ?>
+  <?php require __DIR__ . "/../vues/bootstrap.min.css" ?>
   <?php //include __DIR__ . "/../vues/style.css" ?>
   </style>
 </head>
@@ -40,7 +76,7 @@ define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
             Missions
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./index.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/missionsList.php">Liste</a></li>
             <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createMission.php">Créer</a></li>
           </ul>
         </li>
@@ -49,7 +85,7 @@ define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
             Agents
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./agentsList.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/listAgents.php">Liste</a></li>
             <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createAgent.php">Créer</a></li>
           </ul>
         </li>

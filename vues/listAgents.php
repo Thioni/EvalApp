@@ -14,42 +14,42 @@
 <?php
   //require_once 'vendor/autoload.php';
   //require_once 'entityManager.php';
-  include 'vues/header.php';
+  include './header.php';
   //include 'vues/missionsList.php';
   //include 'createAgent.php';
   //include 'createMission.php';
 
-  require 'Controller/MissionManager.php';
-  $managerMission = new MissionManager();
-  $missions = $managerMission->getAll();
-  
-  require 'Controller/CountryManager.php';
-  $managerCountry = new CountryManager();
-  $countries = $managerCountry->getAll();
-
-  require 'Controller/CodenameManager.php';
-  $managerCodename = new CodenameManager();
-  $codenames = $managerCodename->getAll();
-
-  require_once 'Controller/AgentManager.php';
-  $managerAgent = new AgentManager();
-  $agents = $managerAgent->getAll();
-
-  require 'Controller/TargetManager.php';
-  $managerTarget = new TargetManager();
-  $targets = $managerTarget->getAll();
-
-  require 'Controller/ContactManager.php';
-  $managerContact = new ContactManager();
-  $contacts = $managerContact->getAll();
-
-  require 'Controller/SkillManager.php';
-  $managerSkill = new SkillManager();
-  $agents_skills = $managerSkill->getAll();
-
-  require 'Controller/SpecialityManager.php';
-  $managerSpeciality = new SpecialityManager();
-  $specialities = $managerSpeciality->getAll();
+//  require '../Controller/MissionManager.php';
+//  $managerMission = new MissionManager();
+//  $missions = $managerMission->getAll();
+//  
+//  require '../Controller/CountryManager.php';
+//  $managerCountry = new CountryManager();
+//  $countries = $managerCountry->getAll();
+//
+//  require '../Controller/CodenameManager.php';
+//  $managerCodename = new CodenameManager();
+//  $codenames = $managerCodename->getAll();
+//
+//  require_once '../Controller/AgentManager.php';
+//  $managerAgent = new AgentManager();
+//  $agents = $managerAgent->getAll();
+//
+//  require '../Controller/TargetManager.php';
+//  $managerTarget = new TargetManager();
+//  $targets = $managerTarget->getAll();
+//
+//  require '../Controller/ContactManager.php';
+//  $managerContact = new ContactManager();
+//  $contacts = $managerContact->getAll();
+//
+//  require '../Controller/SkillManager.php';
+//  $managerSkill = new SkillManager();
+//  $agents_skills = $managerSkill->getAll();
+//
+//  require '../Controller/SpecialityManager.php';
+//  $managerSpeciality = new SpecialityManager();
+//  $specialities = $managerSpeciality->getAll();
   
 ?>
 
@@ -122,4 +122,4 @@
 
 </body>
 
-<?php include './vues/footer.php';
+<?php include 'footer.php';

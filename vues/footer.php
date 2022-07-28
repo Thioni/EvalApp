@@ -2,5 +2,5 @@
     <div class="col text-light">FOOTER</div>
   </div>
 
-  <script src="bootstrap.bundle.min.js"></script>
-  <script src="app.js"></script>
+  <script src=<?= HTTP_ROOT .'./bootstrap.bundle.min.js' ?>></script>
+  <script src="../app.js"></script>

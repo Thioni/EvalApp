@@ -1,8 +1,8 @@
-<body class="bg-dark">
+<body class="bg-secondary">
 
 <?php
 
-include '../vues/header.php';
+require '../vues/header.php';
 
 ?>
 <!--
@@ -21,17 +21,17 @@ include '../vues/header.php';
 
 <?php
 
-require './TargetManager.php';
-$managerTarget = new TargetManager();
-$targets = $managerTarget->getAll();
-
-require './CountryManager.php';
-$managerCountry = new CountryManager();
-$countries = $managerCountry->getAll();
-
-require './CodenameManager.php';
-$managerCodename = new CodenameManager();
-$codenames = $managerCodename->getAll();
+//require './TargetManager.php';
+//$managerTarget = new TargetManager();
+//$targets = $managerTarget->getAll();
+//
+//require './CountryManager.php';
+//$managerCountry = new CountryManager();
+//$countries = $managerCountry->getAll();
+//
+//require './CodenameManager.php';
+//$managerCodename = new CodenameManager();
+//$codenames = $managerCodename->getAll();
 
   if ($_POST) {
     $first_name = $_POST["first_name"];

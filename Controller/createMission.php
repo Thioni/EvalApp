@@ -17,37 +17,37 @@ include '../vues/header.php';
 </section>
 -->
 <?php
-require './MissionManager.php';
-$managerMission = new MissionManager();
-$missions = $managerMission->getAll();
-  
-require './CountryManager.php';
-$managerCountry = new CountryManager();
-$countries = $managerCountry->getAll();
-
-require './CodenameManager.php';
-$managerCodename = new CodenameManager();
-$codenames = $managerCodename->getAll();
-
-require './AgentManager.php';
-$managerAgent = new AgentManager();
-$agents = $managerAgent->getAll();
-
-require './TargetManager.php';
-$managerTarget = new TargetManager();
-$targets = $managerTarget->getAll();
-
-require './ContactManager.php';
-$managerContact = new ContactManager();
-$contacts = $managerContact->getAll();
-
-require './HideoutManager.php';
-$managerHideout = new HideoutManager();
-$hideouts = $managerHideout->getAll();
-
-require './SpecialityManager.php';
-$managerSpeciality = new SpecialityManager();
-$specialities = $managerSpeciality->getAll();
+//require './MissionManager.php';
+//$managerMission = new MissionManager();
+//$missions = $managerMission->getAll();
+//  
+//require './CountryManager.php';
+//$managerCountry = new CountryManager();
+//$countries = $managerCountry->getAll();
+//
+//require './CodenameManager.php';
+//$managerCodename = new CodenameManager();
+//$codenames = $managerCodename->getAll();
+//
+//require './AgentManager.php';
+//$managerAgent = new AgentManager();
+//$agents = $managerAgent->getAll();
+//
+//require './TargetManager.php';
+//$managerTarget = new TargetManager();
+//$targets = $managerTarget->getAll();
+//
+//require './ContactManager.php';
+//$managerContact = new ContactManager();
+//$contacts = $managerContact->getAll();
+//
+//require './HideoutManager.php';
+//$managerHideout = new HideoutManager();
+//$hideouts = $managerHideout->getAll();
+//
+//require './SpecialityManager.php';
+//$managerSpeciality = new SpecialityManager();
+//$specialities = $managerSpeciality->getAll();
 
   if ($_POST) {
     $title = $_POST["title"];
@@ -286,6 +286,6 @@ $specialities = $managerSpeciality->getAll();
   </form>
 </main>
 
-</body">
+</body>
 
 <?php include '../vues/footer.php';

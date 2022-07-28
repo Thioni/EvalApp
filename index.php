@@ -11,44 +11,39 @@
 </head>
 
 <?php
-  //require_once 'vendor/autoload.php';
-  //require_once 'entityManager.php';
-  include 'vues/header.php';
-  //include 'vues/missionsList.php';
-  //include 'createAgent.php';
-  //include 'createMission.php';
+  require __DIR__ . '/vues/header.php';
 
-  require 'Controller/MissionManager.php';
-  $managerMission = new MissionManager();
-  $missions = $managerMission->getAll();
-  
-  require 'Controller/CountryManager.php';
-  $managerCountry = new CountryManager();
-  $countries = $managerCountry->getAll();
-
-  require 'Controller/CodenameManager.php';
-  $managerCodename = new CodenameManager();
-  $codenames = $managerCodename->getAll();
-
-  require_once 'Controller/AgentManager.php';
-  $managerAgent = new AgentManager();
-  $agents = $managerAgent->getAll();
-
-  require 'Controller/TargetManager.php';
-  $managerTarget = new TargetManager();
-  $targets = $managerTarget->getAll();
-
-  require 'Controller/ContactManager.php';
-  $managerContact = new ContactManager();
-  $contacts = $managerContact->getAll();
-
-  require 'Controller/HideoutManager.php';
-  $managerHideout = new HideoutManager();
-  $hideouts = $managerHideout->getAll();
-
-  require 'Controller/SpecialityManager.php';
-  $managerSpeciality = new SpecialityManager();
-  $specialities = $managerSpeciality->getAll();
+//  require 'Controller/MissionManager.php';
+//  $managerMission = new MissionManager();
+//  $missions = $managerMission->getAll();
+//  
+//  require 'Controller/CountryManager.php';
+//  $managerCountry = new CountryManager();
+//  $countries = $managerCountry->getAll();
+//
+//  require 'Controller/CodenameManager.php';
+//  $managerCodename = new CodenameManager();
+//  $codenames = $managerCodename->getAll();
+//
+//  require_once 'Controller/AgentManager.php';
+//  $managerAgent = new AgentManager();
+//  $agents = $managerAgent->getAll();
+//
+//  require 'Controller/TargetManager.php';
+//  $managerTarget = new TargetManager();
+//  $targets = $managerTarget->getAll();
+//
+//  require 'Controller/ContactManager.php';
+//  $managerContact = new ContactManager();
+//  $contacts = $managerContact->getAll();
+//
+//  require 'Controller/HideoutManager.php';
+//  $managerHideout = new HideoutManager();
+//  $hideouts = $managerHideout->getAll();
+//
+//  require 'Controller/SpecialityManager.php';
+//  $managerSpeciality = new SpecialityManager();
+//  $specialities = $managerSpeciality->getAll();
 
   //$entityManager = getEntityManager();
 
@@ -58,8 +53,9 @@
 
 <body class="bg-secondary">
 
-<?php include "vues/missionsList.php"; ?>
+<?php require __DIR__ . '/vues/frontpage.php'; ?>
+<?php //include "vues/frontpage.php"; ?>
 
 </body>
-<?php include 'vues/footer.php'; ?>
+<?php require 'vues/footer.php'; ?>
 </html>

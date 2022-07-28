@@ -1,4 +1,4 @@
-<body class="bg-dark">
+<body class="bg-secondary">
 
 <?php
 
@@ -20,21 +20,21 @@ include '../vues/header.php';
 -->
 <?php
 
-require './AgentManager.php';
-$managerAgent = new AgentManager();
-$agents = $managerAgent->getAll();
-
-require './SpecialityManager.php';
-$managerSpeciality = new SpecialityManager();
-$specialities = $managerSpeciality->getAll();
-
-require './CountryManager.php';
-$managerCountry = new CountryManager();
-$countries = $managerCountry->getAll();
-
-require './SkillManager.php';
-$managerSkill = new SkillManager();
-$skills = $managerSkill->getAll();
+//require './AgentManager.php';
+//$managerAgent = new AgentManager();
+//$agents = $managerAgent->getAll();
+//
+//require './SpecialityManager.php';
+//$managerSpeciality = new SpecialityManager();
+//$specialities = $managerSpeciality->getAll();
+//
+//require './CountryManager.php';
+//$managerCountry = new CountryManager();
+//$countries = $managerCountry->getAll();
+//
+//require './SkillManager.php';
+//$managerSkill = new SkillManager();
+//$skills = $managerSkill->getAll();
 
   if ($_POST) {
     $first_name = $_POST["first_name"];
@@ -171,3 +171,5 @@ $skills = $managerSkill->getAll();
 </main>
 
 </body>
+
+<?php require '../vues/footer.php';
