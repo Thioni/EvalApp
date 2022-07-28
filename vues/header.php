@@ -49,19 +49,17 @@ $specialities = $managerSpeciality->getAll();
   <title>Spycraft</title>
   <style>
   <?php require __DIR__ . "/../vues/bootstrap.min.css" ?>
-  <?php //include __DIR__ . "/../vues/style.css" ?>
+  <?php //require __DIR__ . "/../vues/style.css" ?>
   </style>
 </head>
 
-<div class="container-fluid">
-  <header>
+<div class="container-fluid bg-secondary">
     <div class="header row align-items-center">
       <div class="col-3 text-center bleuF">
           <img class="logo" src="" alt="Logo spycraft" width="50" height="50">
       </div>
       <div class="col-6 text-center bleuF" id="header"><h1>SPYCRAFT</h1></div>
     </div>
-  </header>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block">
@@ -76,7 +74,7 @@ $specialities = $managerSpeciality->getAll();
             Missions
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/missionsList.php">Liste</a></li>
+            <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./vues/listMissions.php">Liste</a></li>
             <li><a class="dropdown-item" href="<?= HTTP_ROOT ?>./Controller/createMission.php">Créer</a></li>
           </ul>
         </li>

@@ -1,53 +1,8 @@
 <body class="bg-secondary">
 
 <?php
-include '../vues/header.php';
-?>
-<!--
-<section class="row">
-  <div class="col-1">
-    <a href="../index.php" class="btn btn-success mb-3">Retour</a>
-  </div>
-  <div class="col-1">
-    <a href="createAgent.php" class="btn btn-warning mb-3">Nouvel agent</a>
-  </div>
-  <div class="col-1">
-    <a href="createTarfget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
-  </div>
-</section>
--->
-<?php
-//require './MissionManager.php';
-//$managerMission = new MissionManager();
-//$missions = $managerMission->getAll();
-//  
-//require './CountryManager.php';
-//$managerCountry = new CountryManager();
-//$countries = $managerCountry->getAll();
-//
-//require './CodenameManager.php';
-//$managerCodename = new CodenameManager();
-//$codenames = $managerCodename->getAll();
-//
-//require './AgentManager.php';
-//$managerAgent = new AgentManager();
-//$agents = $managerAgent->getAll();
-//
-//require './TargetManager.php';
-//$managerTarget = new TargetManager();
-//$targets = $managerTarget->getAll();
-//
-//require './ContactManager.php';
-//$managerContact = new ContactManager();
-//$contacts = $managerContact->getAll();
-//
-//require './HideoutManager.php';
-//$managerHideout = new HideoutManager();
-//$hideouts = $managerHideout->getAll();
-//
-//require './SpecialityManager.php';
-//$managerSpeciality = new SpecialityManager();
-//$specialities = $managerSpeciality->getAll();
+
+require '../vues/header.php';
 
   if ($_POST) {
     $title = $_POST["title"];
@@ -96,17 +51,7 @@ include '../vues/header.php';
       "hideout_three" => $hideout_three,
     ]);
     $managerMission->create($newMission);
-
-
-       // $missionManager->create([$title, $codename, $idSpeciality, $description, $date_start, $date_end, $idCountry, $idAgent1, $idAgent2, $idAgent3, $idTarget1, $idTarget2, $idTarget3, $idContact1, $idContact2, $idContact3, $idHideout1, $idHideout2, $idHideout3]);
-
   };
-
-  /*  le if $_POST
-    les premières variables sont créées pour l'occasion (et servent d'index?)
-    la variable $_POST contient automatiquement ....(voir live 4 pokedex)
-    la colone spécifiée pour $_POST correspond au  champ name ? /au champ id ? de nos input/select
-  */
 
 ?>
 
@@ -131,12 +76,6 @@ include '../vues/header.php';
           <?php endforeach ?>
         </select>
         </div>
-
-        <!-- la boucle foreach
-          *boucle foreach classqiue: la première variable sera le nom du tableau, la seconde sera l'index
-          *le champ value sera le champ pris en compte pour l'identifier tandis que celui utilisé dans option sera celui visible de l'utilisateur
-            qui nous permettra de choisir avec un nom plutot qu'un id
-        -->
 
     </div>
 

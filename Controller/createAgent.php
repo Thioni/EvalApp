@@ -2,39 +2,7 @@
 
 <?php
 
-include '../vues/header.php';
-
-?>
-<!--
-<section class="row">
-  <div class="col-1">
-    <a href="../index.php" class="btn btn-success mb-3">Retour</a>
-  </div>
-  <div class="col-1">
-    <a href="createMission.php" class="btn btn-warning mb-3">Nouvelle mission</a>
-  </div>
-  <div class="col-1">
-    <a href="createTarget.php" class="btn btn-warning mb-3">Nouvelle cible</a>
-  </div>
-</section>
--->
-<?php
-
-//require './AgentManager.php';
-//$managerAgent = new AgentManager();
-//$agents = $managerAgent->getAll();
-//
-//require './SpecialityManager.php';
-//$managerSpeciality = new SpecialityManager();
-//$specialities = $managerSpeciality->getAll();
-//
-//require './CountryManager.php';
-//$managerCountry = new CountryManager();
-//$countries = $managerCountry->getAll();
-//
-//require './SkillManager.php';
-//$managerSkill = new SkillManager();
-//$skills = $managerSkill->getAll();
+require '../vues/header.php';
 
   if ($_POST) {
     $first_name = $_POST["first_name"];
@@ -43,7 +11,7 @@ include '../vues/header.php';
     $code_agent = $_POST["code_agent"];
     $nationality = $_POST["nationality"];
     $skill_one = $_POST["skill_one"];
-    $skill_two = $_POST["skill_two"]; //=== "null" ? settype($skill_two, "null") : $_POST["skill_two"];
+    $skill_two = $_POST["skill_two"];
     $skill_three = $_POST["skill_three"];
 
     $newAgent = new Agent([
@@ -65,7 +33,6 @@ include '../vues/header.php';
       "specialities_id" =>$skill_one,
     ]);
     $managerSkill->create($newSkill);
-    //var_dump($skill_one);
 
     if ($skill_two !== "null") {
       $newSkill = new Skill([
@@ -73,7 +40,6 @@ include '../vues/header.php';
         "specialities_id" =>$skill_two,
       ]);
       $managerSkill->create($newSkill);
-      //var_dump($skill_two);
     }
 
     if ($skill_three !== "null") {
