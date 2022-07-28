@@ -3,3 +3,4 @@
   </div>
 
   <script src="bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>

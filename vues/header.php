@@ -78,13 +78,18 @@ define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
           </ul>
         </li>
       </ul>
-      <a href="<?= HTTP_ROOT ?>./connectage.php" class="btn btn-success">Connexion</a>
 
-<!--      <form method="post" class="d-flex">
-        <input type="text" name="login" id="username" class="form-control" placeholder="Utilisateur">
-        <input type="text" name="password" id="password" class="form-control" placeholder="Mot de passe">
-        <button type="submit" class="btn btn-secondary">Connexion</button>
-      </form>-->
+      <?php 
+      if (isset($_SESSION['connecté']) && $_SESSION['connecté'] === true) { 
+      ?>
+        <div class="text-light">Bienvenue,<?=' '.$_SESSION['login'];?></div>
+        <a href="<?= HTTP_ROOT ?>./logout.php" class="btn btn-success">Déconnexion</a>
+      <?php
+      } else { 
+      ?>        
+        <a href="<?= HTTP_ROOT ?>./connection.php" class="btn btn-success">Connexion</a>       
+      <?php } ?>
+
     </div>
   </div>
 </nav>
