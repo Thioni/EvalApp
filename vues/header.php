@@ -1,5 +1,5 @@
 <?php 
-//session_start();
+session_start();
 define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
 ?>
 
@@ -31,6 +31,9 @@ define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <?php 
+      if (isset($_SESSION['connecté']) && $_SESSION['connecté'] === true) { 
+      ?>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,12 +81,13 @@ define('HTTP_ROOT', $_SERVER['SERVER_NAME'] === 'localhost' ? '/Eval6' : '');
           </ul>
         </li>
       </ul>
+      <?php } ?>
 
       <?php 
       if (isset($_SESSION['connecté']) && $_SESSION['connecté'] === true) { 
       ?>
-        <div class="text-light">Bienvenue,<?=' '.$_SESSION['login'];?></div>
-        <a href="<?= HTTP_ROOT ?>./logout.php" class="btn btn-success">Déconnexion</a>
+        <div class="text-light me-2">Bienvenue,<?=' '.$_SESSION['login'];?></div>
+        <a href="<?= HTTP_ROOT ?>./logout.php" class="btn btn-warning">Déconnexion</a>
       <?php
       } else { 
       ?>        

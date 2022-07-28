@@ -100,7 +100,7 @@
   <section class="row">
 
   <?php if (isset($_SESSION['connecté']) && $_SESSION['connecté'] === true) { ?>
-  <div class="col-1 offset-6 mb-3">    
+  <div class="col-1 offset-11 mb-3">    
     <a href="Controller/deleteMission.php?id=<?= $mission->getId() ?>" class="btn btn-danger">Supprimer</a>
   </div>
   <?php } ?>
