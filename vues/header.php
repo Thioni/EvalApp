@@ -55,14 +55,21 @@ $specialities = $managerSpeciality->getAll();
 
 <div class="container-fluid bg-secondary">
     <div class="header row align-items-center">
-      <div class="col-3 text-center bleuF">
+      <div class="col-3 text-center">
           <img class="logo" src="" alt="Logo spycraft" width="50" height="50">
       </div>
-      <div class="col-6 text-center bleuF" id="header"><h1>SPYCRAFT</h1></div>
+      <div class="col-6 text-center" id="header"><h1>SPYCRAFT</h1></div>
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<button 
+  class="navbar-toggler fs-6 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+  </svg>
+    Menu
+</button>
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <?php 
@@ -124,8 +131,8 @@ $specialities = $managerSpeciality->getAll();
         <a href="<?= HTTP_ROOT ?>./logout.php" class="btn btn-warning">Déconnexion</a>
       <?php
       } else { 
-      ?>        
-        <a href="<?= HTTP_ROOT ?>./connection.php" class="btn btn-success">Connexion</a>       
+      ?> 
+        <a href="<?= HTTP_ROOT ?>./connection.php" class="btn btn-success">Connexion</a>    
       <?php } ?>
 
     </div>
