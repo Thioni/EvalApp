@@ -60,7 +60,7 @@
     <section class="row m-0 justify-content-center text-center">
 
     <div class="col-1 offset-4 mb-3">    
-      <a href="Controller/deleteAgent.php?id=<?= $agent->getId() ?>" class="btn btn-danger">Supprimer</a>
+      <a href="../Controller/deleteAgent.php?id=<?= $agent->getId() ?>" class="btn btn-danger">Supprimer</a>
     </div>
 
     </section>

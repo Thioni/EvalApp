@@ -5,7 +5,7 @@ require './MissionManager.php';
 $managerMission = new MissionManager();
 $managerMission->delete($_GET["id"]);
 
-header("Location: ../index.php");
+header("Location: ../vues/listMissions.php");
 
 ?>
 

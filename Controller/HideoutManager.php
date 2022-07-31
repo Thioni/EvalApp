@@ -20,7 +20,10 @@ class HideoutManager {
   public function create(Hideout $hideout) {
     $request = $this->db->prepare("INSERT INTO `hideouts` (code_hideout, adress, type, country) VALUE (:code_hideout, :adress, :type, :country)");
   
-    $request->bindValue(":xxx", $hideout->getXXX(), PDO::PARAM_STR);
+    $request->bindValue(":code_hideout", $hideout->getCode_hideout(), PDO::PARAM_INT);
+    $request->bindValue(":adress", $hideout->getAdress(), PDO::PARAM_STR);
+    $request->bindValue(":type", $hideout->getType(), PDO::PARAM_INT);
+    $request->bindValue(":country", $hideout->getCountry(), PDO::PARAM_INT);
   
     $request->execute();
   }
@@ -49,7 +52,10 @@ class HideoutManager {
   {
     $req = $this->db->prepare("UPDATE `hideouts` SET code_hideout = :code_hideout, adress = :adress, type = :type, country = :country");
 
-    $request->bindValue(":xxx", $hideout->getTitle(), PDO::PARAM_STR);
+    $request->bindValue(":code_hideout", $hideout->getCode_hideout(), PDO::PARAM_INT);
+    $request->bindValue(":adress", $hideout->getAdress(), PDO::PARAM_STR);
+    $request->bindValue(":type", $hideout->getType(), PDO::PARAM_INT);
+    $request->bindValue(":country", $hideout->getCountry(), PDO::PARAM_INT);
 
     $req->execute();
   }

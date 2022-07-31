@@ -20,7 +20,11 @@ class ContactManager {
   public function create(Contact $contact) {
     $request = $this->db->prepare("INSERT INTO `contacts` (first_name, last_name, birthdate, codename, nationality) VALUE (:first_name, :last_name, :birthdate, :codename, :nationality)");
   
-    $request->bindValue(":xxx", $contact->getXXX(), PDO::PARAM_STR);
+    $request->bindValue(":first_name", $contact->getFirst_name(), PDO::PARAM_STR);
+    $request->bindValue(":last_name", $contact->getLast_name(), PDO::PARAM_STR);
+    $request->bindValue(":birthdate", $contact->getBirthdate(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $contact->getCodename(), PDO::PARAM_INT);
+    $request->bindValue(":nationality", $contact->getNationality(), PDO::PARAM_INT);
   
     $request->execute();
   }
@@ -49,7 +53,11 @@ class ContactManager {
   {
     $req = $this->db->prepare("UPDATE `contacts` SET first_name = :first_name, last_name = :last_name, birthdate = :birthdate, codename = :codename, nationality = :nationality");
 
-    $request->bindValue(":xxx", $contact->getTitle(), PDO::PARAM_STR);
+    $request->bindValue(":first_name", $contact->getFirst_name(), PDO::PARAM_STR);
+    $request->bindValue(":last_name", $contact->getLast_name(), PDO::PARAM_STR);
+    $request->bindValue(":birthdate", $contact->getBirthdate(), PDO::PARAM_STR);
+    $request->bindValue(":codename", $contact->getCodename(), PDO::PARAM_INT);
+    $request->bindValue(":nationality", $contact->getNationality(), PDO::PARAM_INT);
 
     $req->execute();
   }
