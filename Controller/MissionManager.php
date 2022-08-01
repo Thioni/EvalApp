@@ -20,7 +20,7 @@ class MissionManager {
   public function create(Mission $mission) {
     $request = $this->db->prepare("INSERT INTO `missions` (title, description, mission_type, mission_status, date_start, date_end, codename, country, agent_one, agent_two, agent_three, target_one, target_two, target_three, contact_one, contact_two, contact_three, hideout_one, hideout_two, hideout_three, speciality) VALUE (:title, :description, :mission_type, :mission_status, :date_start, :date_end, :codename, :country, :agent_one, :agent_two, :agent_three, :target_one, :target_two, :target_three, :contact_one, :contact_two, :contact_three, :hideout_one, :hideout_two, :hideout_three, :speciality)");
   
-    $request->bindValue(":title", $mission->getTitle(), PDO::PARAM_STR); // PDO::PARAM_ pour préciser le type. Pas obligatoire.
+    $request->bindValue(":title", $mission->getTitle(), PDO::PARAM_STR);
     $request->bindValue(":description", $mission->getDescription(), PDO::PARAM_STR);
     $request->bindValue(":mission_type", $mission->getMission_type(), PDO::PARAM_STR);
     $request->bindValue(":mission_status", $mission->getMission_status(), PDO::PARAM_STR);

@@ -18,7 +18,7 @@ require '../vues/header.php';
     $agent_two = $_POST["agent_two"] === "null" ? NULL : $_POST["agent_two"]; 
     $agent_three = $_POST["agent_three"] === "null" ? NULL : $_POST["agent_three"];
     $target_one = $_POST["target_one"];
-    $target_two = $_POST["target_three"] === "null" ? NULL : $_POST["target_two"];
+    $target_two = $_POST["target_two"] === "null" ? NULL : $_POST["target_two"];
     $target_three = $_POST["target_three"] === "null" ? NULL : $_POST["target_three"];
     $contact_one = $_POST["contact_one"];
     $contact_two = $_POST["contact_two"] === "null" ? NULL : $_POST["contact_two"];
@@ -41,7 +41,7 @@ require '../vues/header.php';
       "agent_two" => $agent_two,
       "agent_three" => $agent_three,
       "target_one" => $target_one,
-      "target_three" => $target_two,
+      "target_two" => $target_two,
       "target_three" => $target_three,
       "contact_one" => $contact_one,
       "contact_two" => $contact_two,
@@ -50,7 +50,30 @@ require '../vues/header.php';
       "hideout_two" => $hideout_two,
       "hideout_three" => $hideout_three,
     ]);
-    $managerMission->create($newMission);
+
+//    $test = '';
+//    $countryID = $newMission->getCountry();
+//
+//    if ( $countryID != ) {
+//        $test = false;
+//      } else {
+//        $test = true;
+//      }
+//    }
+//
+//    $targetNat = $contact->getNationality();
+//
+//    if ($test = true) {
+//      echo 'victory';
+//    //$managerMission->create($newMission);
+//  }
+//    else {
+//      echo 'test test';
+//    }
+//
+//  //$managerMission->create($newMission);
+//  var_dump($test);
+//  echo $countryID.' '.$targetNat;
   };
 
 ?>
@@ -171,19 +194,25 @@ require '../vues/header.php';
           <select name="contact_one" id="contact_one" class="form-select" required>
             <option value="" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
-              <option value="<?= $contact->getId()?>"><?= $contact->getFirst_name()." ".$contact->getLast_name(); ?></option>
+              <option value="<?= $contact->getId() ?>">
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ";
+              $managerContact->getTest($contact->getNationality()); ?></option>
             <?php endforeach ?>
           </select>
           <select name="contact_two" id="contact_two" class="form-select">
             <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
-              <option value="<?= $contact->getId()?>"><?= $contact->getFirst_name()." ".$contact->getLast_name(); ?></option>
+              <option value="<?= $contact->getId() ?>">
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ";
+              $managerContact->getTest($contact->getNationality());  ?></option>
             <?php endforeach ?>
           </select>
           <select name="contact_three" id="contact_three" class="form-select">
             <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
-              <option value="<?= $contact->getId()?>"><?= $contact->getFirst_name()." ".$contact->getLast_name(); ?></option>
+              <option value="<?= $contact->getId() ?>">
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ";
+              $managerContact->getTest($contact->getNationality());  ?></option>
             <?php endforeach ?>
           </select>
       </div>

@@ -37,7 +37,37 @@ class ContactManager {
     $contact = new Contact($data);
     return $contact;
   }
-  
+///////////////////
+//  public function getNat() {
+//    $req = $this->db->query("SELECT location FROM `contacts` JOIN countries ON countries.id WHERE contacts.nationality = countries.id");
+//    return $req->fetch()["location"];
+//}
+//
+//public function getNatio(int $id)
+//{
+//  $request = $this->db->prepare("SELECT location FROM `contacts` JOIN countries ON countries.id WHERE contacts.nationality = countries.id AND WHERE id = :id");
+//  $request->bindValue(":id", $id, PDO::PARAM_INT);
+//  $data = $request->fetch();
+//  $contact = new Contact($data);
+//  return $contact;
+//}
+
+public function getTest($nationality) {
+
+  $request = $this->db->prepare('SELECT contacts.id, location 
+  FROM contacts
+  JOIN countries ON contacts.nationality = countries.id
+  WHERE contacts.nationality LIKE :nationality LIMIT 1');
+  $request->bindValue(":nationality", $nationality, PDO::PARAM_INT);
+  $request->execute();
+  foreach ($request as $sorted) {
+    echo $sorted['location'].'<br>';
+    }
+}
+
+/// limit 1 sinon je me retrouve avec des intitulés doublon dans la liste. "malaisiemalaisie"
+
+///////////////////
   public function getAll() {
     $contacts = [];
     $request = $this->db->query("SELECT * FROM `contacts`");

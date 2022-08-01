@@ -78,10 +78,10 @@
       </div>
         
       <div class="col-1 bg-light text-center">
-      <?php foreach ($targets as $target):
-          echo $mission->getContact_one() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
-          echo $mission->getContact_two() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
-          echo $mission->getContact_three() === $target->getId() ? $target->getFirst_name()." ".$target->getLast_name()."<br>" : "";
+      <?php foreach ($contacts as $contact):
+          echo $mission->getContact_one() === $contact->getId() ? $contact->getFirst_name()." ".$contact->getLast_name()."<br>" : "";
+          echo $mission->getContact_two() === $contact->getId() ? $contact->getFirst_name()." ".$contact->getLast_name()."<br>" : "";
+          echo $mission->getContact_three() === $contact->getId() ? $contact->getFirst_name()." ".$contact->getLast_name()."<br>" : "";
         endforeach; ?>
       </div>
       
