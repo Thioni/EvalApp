@@ -50,30 +50,6 @@ require '../vues/header.php';
       "hideout_two" => $hideout_two,
       "hideout_three" => $hideout_three,
     ]);
-
-//    $test = '';
-//    $countryID = $newMission->getCountry();
-//
-//    if ( $countryID != ) {
-//        $test = false;
-//      } else {
-//        $test = true;
-//      }
-//    }
-//
-//    $targetNat = $contact->getNationality();
-//
-//    if ($test = true) {
-//      echo 'victory';
-//    //$managerMission->create($newMission);
-//  }
-//    else {
-//      echo 'test test';
-//    }
-//
-//  //$managerMission->create($newMission);
-//  var_dump($test);
-//  echo $countryID.' '.$targetNat;
   };
 
 ?>

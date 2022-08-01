@@ -37,20 +37,6 @@ class ContactManager {
     $contact = new Contact($data);
     return $contact;
   }
-///////////////////
-//  public function getNat() {
-//    $req = $this->db->query("SELECT location FROM `contacts` JOIN countries ON countries.id WHERE contacts.nationality = countries.id");
-//    return $req->fetch()["location"];
-//}
-//
-//public function getNatio(int $id)
-//{
-//  $request = $this->db->prepare("SELECT location FROM `contacts` JOIN countries ON countries.id WHERE contacts.nationality = countries.id AND WHERE id = :id");
-//  $request->bindValue(":id", $id, PDO::PARAM_INT);
-//  $data = $request->fetch();
-//  $contact = new Contact($data);
-//  return $contact;
-//}
 
 public function getTest($nationality) {
 
@@ -65,12 +51,9 @@ public function getTest($nationality) {
     }
 }
 
-/// limit 1 sinon je me retrouve avec des intitulés doublon dans la liste. "malaisiemalaisie"
-
-///////////////////
   public function getAll() {
     $contacts = [];
-    $request = $this->db->query("SELECT * FROM `contacts`");
+    $request = $this->db->query("SELECT * FROM `contacts` ORDER BY nationality ASC");
     $allData = $request->fetchAll();
     foreach ($allData as $data) {
       $contact = new Contact($data);
