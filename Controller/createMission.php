@@ -50,6 +50,33 @@ require '../vues/header.php';
       "hideout_two" => $hideout_two,
       "hideout_three" => $hideout_three,
     ]);
+    
+    // contact one
+
+    ////$index = 1;
+    ////var_dump($contact_one);
+    //$contactID = $managerContact->getAll();
+    //$testid = $contactID[$contact_one-1];
+    ////$testid = $contactID->get($contact_one);
+    ////var_dump($contactID[$contact_one-1]->getNationality());
+    ////var_dump($contactID);
+    //var_dump($testid);
+    ;
+
+    //$index= 0;
+    //var_dump($agent_one);
+    //$agentID = $managerAgent->getAll();
+    //$testid = $agentID[$agent_one-1];
+    ////$testid = $agentID->get($agent_one);
+    //var_dump($agentID[$agent_one-1]->getNationality());
+    ////var_dump($agentID);
+    ////var_dump($testid);
+
+
+
+
+
+    $managerMission->create($newMission);
   };
 
 ?>
@@ -171,26 +198,23 @@ require '../vues/header.php';
             <option value="" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId() ?>">
-              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ";
-              $managerContact->getTest($contact->getNationality()); ?></option>
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNat($contact->getNationality()); ?></option>
             <?php endforeach ?>
           </select>
           <select name="contact_two" id="contact_two" class="form-select">
             <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId() ?>">
-              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ";
-              $managerContact->getTest($contact->getNationality());  ?></option>
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNat($contact->getNationality()); ?></option>
             <?php endforeach ?>
           </select>
           <select name="contact_three" id="contact_three" class="form-select">
             <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId() ?>">
-              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ";
-              $managerContact->getTest($contact->getNationality());  ?></option>
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNat($contact->getNationality()); ?></option>
             <?php endforeach ?>
-          </select>
+          </select> 
       </div>
             
       <div class="col-8 col-md-2">
