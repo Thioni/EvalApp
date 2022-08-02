@@ -38,7 +38,7 @@ class ContactManager {
     return $contact;
   }
 
-public function getNat($nationality) {
+public function getNatById($nationality) {
 
   $request = $this->db->prepare('SELECT contacts.id, location 
   FROM contacts
@@ -47,14 +47,24 @@ public function getNat($nationality) {
   $request->bindValue(":nationality", $nationality, PDO::PARAM_INT);
   $request->execute();
   foreach ($request as $sorted) {
-    return $sorted['location'].'<br>';
+    return $sorted['location'];
     }
 }
 
   public function getAll() {
     $contacts = [];
-    //$request = $this->db->query("SELECT * FROM `contacts` ORDER BY nationality ASC");
     $request = $this->db->query("SELECT * FROM `contacts`");
+    $allData = $request->fetchAll();
+    foreach ($allData as $data) {
+      $contact = new Contact($data);
+      $contacts[] = $contact;
+    }
+    return $contacts;
+  }
+
+  public function getAllByNat() {
+    $contacts = [];
+    $request = $this->db->query("SELECT * FROM `contacts` ORDER BY nationality ASC");    
     $allData = $request->fetchAll();
     foreach ($allData as $data) {
       $contact = new Contact($data);

@@ -83,7 +83,7 @@ CREATE TABLE missions (
   contact_one INT(11) NOT NULL,
   contact_two INT(11) NULL,
   contact_three INT(11) NULL,
-  hideout_one INT(11) NOT NULL,
+  hideout_one INT(11) NULL,
   hideout_two INT(11) NULL,
   hideout_three INT(11) NULL,
   speciality INT(11) NOT NULL,

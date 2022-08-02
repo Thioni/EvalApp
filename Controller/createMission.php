@@ -23,7 +23,7 @@ require '../vues/header.php';
     $contact_one = $_POST["contact_one"];
     $contact_two = $_POST["contact_two"] === "null" ? NULL : $_POST["contact_two"];
     $contact_three = $_POST["contact_three"] === "null" ? NULL : $_POST["contact_three"];
-    $hideout_one = $_POST["hideout_one"];
+    $hideout_one = $_POST["hideout_one"] === "null" ? NULL : $_POST["hideout_one"];
     $hideout_two = $_POST["hideout_two"] === "null" ? NULL : $_POST["hideout_two"];
     $hideout_three = $_POST["hideout_three"] === "null" ? NULL : $_POST["hideout_three"];
 
@@ -51,17 +51,36 @@ require '../vues/header.php';
       "hideout_three" => $hideout_three,
     ]);
     
+    require 'validation.php';
+
+
     // contact one
 
-    ////$index = 1;
-    ////var_dump($contact_one);
-    //$contactID = $managerContact->getAll();
-    //$testid = $contactID[$contact_one-1];
-    ////$testid = $contactID->get($contact_one);
-    ////var_dump($contactID[$contact_one-1]->getNationality());
-    ////var_dump($contactID);
+//    //$index = 1;
+//    //var_dump($contact_one);
+//      $contactId = $managerContact->getAll();
+//      $testid = $contactId[$contact_one-1];
+
+
+//    //$testid = $contactID->get($contact_one);
+//    $agent_one_nat = ($contactId[$contact_one-1]->getNationality());
+//    var_dump($agent_one_nat);
+//    var_dump($country);
+//
+//    //if (isset($contact_two)) {
+//    //  echo 'existe';
+//    //} else {
+//    //  echo 'nope';
+//    //};
+//
+//    if (isset($agent_one_nat) && $country == $agent_one_nat) {
+//      echo 'Egal';
+//    } else {
+//      echo 'Différent';
+//    }
+
+    //var_dump($contactID);
     //var_dump($testid);
-    ;
 
     //$index= 0;
     //var_dump($agent_one);
@@ -76,7 +95,7 @@ require '../vues/header.php';
 
 
 
-    $managerMission->create($newMission);
+    //$managerMission->create($newMission);
   };
 
 ?>
@@ -198,29 +217,29 @@ require '../vues/header.php';
             <option value="" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId() ?>">
-              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNat($contact->getNationality()); ?></option>
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNatById($contact->getNationality()); ?></option>
             <?php endforeach ?>
           </select>
           <select name="contact_two" id="contact_two" class="form-select">
             <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId() ?>">
-              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNat($contact->getNationality()); ?></option>
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNatById($contact->getNationality()); ?></option>
             <?php endforeach ?>
           </select>
           <select name="contact_three" id="contact_three" class="form-select">
             <option value="null" selected>---</option>
             <?php foreach ($contacts as $contact): ?>
               <option value="<?= $contact->getId() ?>">
-              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNat($contact->getNationality()); ?></option>
+              <?= $contact->getFirst_name()." ".$contact->getLast_name()." -- ".$managerContact->getNatById($contact->getNationality()); ?></option>
             <?php endforeach ?>
           </select> 
       </div>
             
       <div class="col-8 col-md-2">
           <label for="hideout" class="bg-success">Planque(s)</label>
-          <select name="hideout_one" id="hideout_one" class="form-select" required>
-            <option value="" selected>---</option>
+          <select name="hideout_one" id="hideout_one" class="form-select">
+            <option value="null" selected>---</option>
             <?php foreach ($hideouts as $hideout): ?>
               <option value="<?= $hideout->getId()?>"><?= $hideout->getAdress(); ?></option>
             <?php endforeach ?>

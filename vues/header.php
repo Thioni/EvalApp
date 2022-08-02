@@ -24,7 +24,7 @@ $targets = $managerTarget->getAll();
 
 require __DIR__ . '/../Controller/ContactManager.php';
 $managerContact = new ContactManager();
-$contacts = $managerContact->getAll();
+$contacts = $managerContact->getAllByNat();
 
 require __DIR__ . '/../Controller/HideoutManager.php';
 $managerHideout = new HideoutManager();
